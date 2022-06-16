@@ -121,3 +121,39 @@ Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home
 #4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
 #5 {main}
 Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php' on line 50
+[16-Jun-2022 21:25:38 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('create')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[16-Jun-2022 21:25:53 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('create')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[16-Jun-2022 21:26:58 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('create')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[16-Jun-2022 21:27:04 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('create')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[16-Jun-2022 22:52:13 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'session_regenerate_id(): Session ID cannot be regenerated when there is no active session'
+Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'session_regener...', 'D:\\Dropbox\\#pro...', 23)
+#1 D:\Dropbox\#programování\#projekt\ins_app\App\Auth.php(23): session_regenerate_id(true)
+#2 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(73): App\Auth::login(Object(App\Models\User))
+#3 [internal function]: App\Controllers\Home->loginAction()
+#4 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#5 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#6 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#7 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Auth.php' on line 23
+[16-Jun-2022 22:54:43 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'session_regenerate_id(): Session ID cannot be regenerated when there is no active session'
+Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'session_regener...', 'D:\\Dropbox\\#pro...', 23)
+#1 D:\Dropbox\#programování\#projekt\ins_app\App\Auth.php(23): session_regenerate_id(true)
+#2 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(73): App\Auth::login(Object(App\Models\User))
+#3 [internal function]: App\Controllers\Home->loginAction()
+#4 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#5 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#6 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#7 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Auth.php' on line 23

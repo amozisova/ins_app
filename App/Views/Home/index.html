@@ -7,12 +7,12 @@
 <h1>Vítejte v aplikaci pro správu pojištění!</h1>
 <p>Pro přístup do aplikace se přihlašte zadáním přihlašovacích údajů do formuláře níže:</p>
 
-<form method="post" action="">
+<form method="post" action="home/login">
     <label for="email">Vaše emailová adresa:</label>
-    <input type="email" name="email" id="email" placeholder="váš e-mail" autofocus value="{{ email }}">
+    <input type="email" name="email" id="email" placeholder="váš e-mail" required autofocus value="{{ email }}">
     <p>
         <label for="password">Vaše heslo:</label>
-        <input type="password" name="password" id="password" placeholder="vaše heslo">
+        <input type="password" name="password" id="password" placeholder="vaše heslo" required>
     </p>
     <p>
         <button type="submit">Přihlásit se</button>

@@ -29,6 +29,8 @@ class Login extends \Core\Controller {
             View::renderTemplate('Home/index.html', [
                 'email' => $_POST['email'],
             ]);
+
+            echo ('Chyba přihlášení!'); //tbd
         }
     }
 

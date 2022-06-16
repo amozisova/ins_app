@@ -42,7 +42,7 @@ class User extends \Core\Model
      */
     public static function findByEmail($email)
     {
-        $sql = 'SELECT * FROM users WHERE email = :email';
+        $sql = 'SELECT * FROM clients WHERE email = :email';
 
         $db = static::getDB();
         $stmt = $db->prepare($sql);
@@ -85,7 +85,7 @@ class User extends \Core\Model
      */
     public static function findByID($id)
     {
-        $sql = 'SELECT * FROM users WHERE id = :id';
+        $sql = 'SELECT * FROM clients WHERE id = :id';
 
         $db = static::getDB();
         $stmt = $db->prepare($sql);
@@ -97,4 +97,26 @@ class User extends \Core\Model
 
         return $stmt->fetch();
     }
+
+
+/**
+ * Login user function //nově napsaná
+ *
+ * @param string $email
+ * @param string $password
+ * @return void
+ */
+    public static function checkLogin($email, $password)
+    {
+        $user = static::findByEmail($email);
+
+        if ($user) {
+            if (password_verify($password, $user->password_hash)) {
+                return $user;
+            }
+        }
+
+        return false;
+    }
+
 }
