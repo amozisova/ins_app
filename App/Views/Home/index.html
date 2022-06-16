@@ -8,11 +8,11 @@
 <p>Pro přístup do aplikace se přihlašte zadáním přihlašovacích údajů do formuláře níže:</p>
 
 <form method="post" action="">
-    <label for="userlogin">Vaše emailová adresa:</label>
-    <input type="email" name="userlogin" id="userlogin">
+    <label for="email">Vaše emailová adresa:</label>
+    <input type="email" name="email" id="email" placeholder="váš e-mail" autofocus value="{{ email }}">
     <p>
-        <label for="userpswd">Vaše heslo:</label>
-        <input type="password" name="userpswd" id="userpswd">
+        <label for="password">Vaše heslo:</label>
+        <input type="password" name="password" id="password" placeholder="vaše heslo">
     </p>
     <p>
         <button type="submit">Přihlásit se</button>

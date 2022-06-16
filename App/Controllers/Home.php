@@ -43,4 +43,16 @@ class Home extends \Core\Controller
             'name' => 'Dave', 'colours' => ['red', 'green', 'blue']
         ]);
     }
+
+    public function loginAction()
+    {
+        
+    $userlogin = $_POST['userlogin'];
+    $userpswd= $_POST['userpswd'];
+
+    echo ('přihlášení'.$userlogin.$userpswd);
+
+    }
+
+
 }

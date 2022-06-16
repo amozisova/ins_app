@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace App\Controllers\User;
 
-use \Core\View;
 /**
  * User admin controller
  */
@@ -27,6 +26,6 @@ class Users extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('User/index.html');
+        echo 'User index';
     }
 }
