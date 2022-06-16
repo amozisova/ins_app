@@ -1,0 +1,13 @@
+[16-Jun-2022 14:01:19 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[16-Jun-2022 19:22:47 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method action (in controller App\Controllers\Posts) not found'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('posts/action')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 124
+[16-Jun-2022 19:23:01 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method idAction not found in controllerApp\Controllers\Posts'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('id', Array)
+#1 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('posts/id')
+#2 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php' on line 49

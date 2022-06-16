@@ -1,0 +1,133 @@
+[13-Jun-2022 16:28:28 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:28:29 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:28:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:28:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:36:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:36:36 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:36:37 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:38:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:47:57 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('neco')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:47:57 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:55:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('neco')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:55:32 Europe/Berlin] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "404.html" (looked into: D:\Dropbox\#programování\#projekt\MVC/App/Views). in D:\Dropbox\#programování\#projekt\MVC\vendor\twig\twig\src\Loader\FilesystemLoader.php:227
+Stack trace:
+#0 D:\Dropbox\#programování\#projekt\MVC\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('404.html')
+#1 D:\Dropbox\#programování\#projekt\MVC\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('404.html')
+#2 D:\Dropbox\#programování\#projekt\MVC\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('404.html')
+#3 D:\Dropbox\#programování\#projekt\MVC\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('404.html')
+#4 D:\Dropbox\#programování\#projekt\MVC\Core\View.php(41): Twig\Environment->render('404.html', Array)
+#5 D:\Dropbox\#programování\#projekt\MVC\Core\Error.php(59): Core\View::renderTemplate('404.html')
+#6 [internal function]: Core\Error::exceptionHandler(Object(Exception))
+#7 {main}
+  thrown in D:\Dropbox\#programování\#projekt\MVC\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 227
+[13-Jun-2022 16:56:07 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('neco')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:56:20 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('index.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:56:28 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('neco')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:56:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('index.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:57:25 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('neco')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:57:27 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('Home/index.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:57:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('Home/Home/index...')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:58:33 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('n')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:59:09 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method eeAction not found in controllerApp\Controllers\Posts'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\Core\Router.php(121): Core\Controller->__call('ee', Array)
+#1 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('posts/ee')
+#2 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Controller.php' on line 49
+[13-Jun-2022 16:59:27 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('posts/index.htm...')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:59:39 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('posts/index.htm...')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 16:59:43 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method eeAction not found in controllerApp\Controllers\Posts'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\Core\Router.php(121): Core\Controller->__call('ee', Array)
+#1 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('posts/ee')
+#2 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Controller.php' on line 49
+[13-Jun-2022 18:54:39 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('8080')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 19:08:50 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('ntt')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 19:09:08 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 19:47:25 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('dashboard/')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 19:48:49 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('ntt/')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 19:48:54 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('ntt/www/')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
+[13-Jun-2022 19:49:09 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\MVC\public\index.php(35): Core\Router->dispatch('ntt/www/index.p...')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\MVC\Core\Router.php' on line 130
