@@ -4,13 +4,19 @@
 
 {% block body %}
 
-    <h1>Welcome</h1>
-    <p>Hello from a Twig template, {{ name }}!</p>
+<h1>Vítejte v aplikaci pro správu pojištění!</h1>
+<p>Pro přístup do aplikace se přihlašte zadáním přihlašovacích údajů do formuláře níže:</p>
 
-    <ul>
-        {% for colour in colours %}
-            <li>{{ colour }}</li>
-        {% endfor %}
-    </ul>
+<form method="post" action="">
+    <label for="userlogin">Vaše emailová adresa:</label>
+    <input type="email" name="userlogin" id="userlogin">
+    <p>
+        <label for="userpswd">Vaše heslo:</label>
+        <input type="password" name="userpswd" id="userpswd">
+    </p>
+    <p>
+        <button type="submit">Přihlásit se</button>
+    </p>
+</form>
 
 {% endblock %}

@@ -11,3 +11,7 @@ Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121)
 #1 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('posts/id')
 #2 {main}
 Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php' on line 49
+[16-Jun-2022 19:55:29 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
