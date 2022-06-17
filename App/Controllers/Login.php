@@ -14,6 +14,8 @@ class Login extends \Core\Controller {
      *
      * @return void
      */
+
+     /*
     public function createAction()
     {
         $user = User::authenticate($_POST['email'], $_POST['password']);
@@ -33,5 +35,5 @@ class Login extends \Core\Controller {
             echo ('Chyba přihlášení!'); //tbd
         }
     }
-
+*/
 }

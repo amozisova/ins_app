@@ -48,13 +48,14 @@ class Home extends \Core\Controller
 
 
     /**
-     *  funguje; dále rozpracovat
+     *  checks data submitted via login form to login user
      * 
      */
 
     public function loginAction()
     {
-        $user = User::checkLogin($_POST['email'], $_POST['password']);
+        $submittedData=new User;
+        $user = $submittedData->checkLogin($_POST['email'], $_POST['password']);
 
         if($user) {
             echo "Funguje. Údaje sedí.";

@@ -1,0 +1,50 @@
+[17-Jun-2022 16:56:27 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[17-Jun-2022 17:30:38 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method checkLoginAction not found in controllerApp\Controllers\Home'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(57): Core\Controller->__call('checkLogin', Array)
+#1 [internal function]: App\Controllers\Home->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php' on line 51
+[17-Jun-2022 17:30:48 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method checkLoginAction not found in controllerApp\Controllers\Home'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(57): Core\Controller->__call('checkLogin', Array)
+#1 [internal function]: App\Controllers\Home->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php' on line 51
+[17-Jun-2022 17:33:17 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method checkLoginAction not found in controllerApp\Controllers\Home'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(58): Core\Controller->__call('checkLogin', Array)
+#1 [internal function]: App\Controllers\Home->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php' on line 51
+[17-Jun-2022 18:03:14 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Optional parameter $data declared before required parameter $errors is implicitly treated as a required parameter'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(571): Core\Error::errorHandler(8192, 'Optional parame...', 'D:\\Dropbox\\#pro...', 23)
+#1 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(571): include()
+#2 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('D:\\Dropbox\\#pro...')
+#3 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(57): Composer\Autoload\ClassLoader->loadClass('App\\Models\\User')
+#4 [internal function]: App\Controllers\Home->loginAction()
+#5 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#6 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#7 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#8 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Models\User.php' on line 23
+[17-Jun-2022 18:03:22 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Optional parameter $data declared before required parameter $errors is implicitly treated as a required parameter'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(571): Core\Error::errorHandler(8192, 'Optional parame...', 'D:\\Dropbox\\#pro...', 23)
+#1 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(571): include()
+#2 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('D:\\Dropbox\\#pro...')
+#3 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(57): Composer\Autoload\ClassLoader->loadClass('App\\Models\\User')
+#4 [internal function]: App\Controllers\Home->loginAction()
+#5 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#6 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#7 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#8 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Models\User.php' on line 23
