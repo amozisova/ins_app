@@ -48,7 +48,8 @@ class Home extends \Core\Controller
 
 
     /**
-     *  checks data submitted via login form to login user
+     *  checks data submitted via login form 
+     *  if verified, logins user
      * 
      */
 
@@ -58,8 +59,15 @@ class Home extends \Core\Controller
         $user = $submittedData->checkLogin($_POST['email'], $_POST['password']);
 
         if($user) {
-            echo "Funguje. Údaje sedí.";
-        } else echo 'Nefunguje.';
+            
+            header('location: http://'.$_SERVER['HTTP_HOST'].'/',true,303);
+            exit;
+            
+            
+            
+        } else View::renderTemplate('Home/index.html',['email'=>$_POST['email'],
+    ]);
+        echo 'Chybné přihlašovací údaje. Zkuste to znovu.';
     }
 }
 

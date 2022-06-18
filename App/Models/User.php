@@ -13,19 +13,18 @@ class User extends \Core\Model
      * Error messages
      * @var array
      */
-    public $errors = [];
+    //public $errors = [];
 
     /**
      * Class constructor
      * @param array $data  Initial property values (optional)
      * @return void
      */
-    public function __construct($data = [], $errors=[])
+    public function __construct($data = [])
     {
         foreach ($data as $key => $value) {
             $this->$key = $value;
         };
-        $this->errors=$errors;
     }
 
     /**
@@ -66,6 +65,12 @@ class User extends \Core\Model
 
         return false;
     }
+
+public function getUserName(){
+
+}
+
+
 }
 /**
  * Find a user model by ID

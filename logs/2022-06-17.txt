@@ -48,3 +48,30 @@ Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\Clas
 #7 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
 #8 {main}
 Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Models\User.php' on line 23
+[17-Jun-2022 18:31:34 Europe/Berlin] Uncaught exception: 'Error' with message 'Non-static method App\Models\User::findByEmail() cannot be called statically'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(58): App\Models\User::checkLogin('adikd@seznam.cz', '1')
+#1 [internal function]: App\Controllers\Home->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Models\User.php' on line 59
+[17-Jun-2022 18:38:04 Europe/Berlin] Uncaught exception: 'Error' with message 'Object of class App\Models\User could not be converted to string'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Template.php(171): __TwigTemplate_7ec8df2f6bda1c1d1d6cf9803dd9b0a5->block_body(Array, Array)
+#1 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Environment.php(358) : eval()'d code(57): Twig\Template->displayBlock('body', Array, Array)
+#2 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Template.php(394): __TwigTemplate_3396dd33248987ddf94cff3e9947fffe->doDisplay(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Template.php(367): Twig\Template->displayWithErrorHandling(Array, Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Environment.php(358) : eval()'d code(43): Twig\Template->display(Array, Array)
+#5 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Template.php(394): __TwigTemplate_7ec8df2f6bda1c1d1d6cf9803dd9b0a5->doDisplay(Array, Array)
+#6 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Template.php(367): Twig\Template->displayWithErrorHandling(Array, Array)
+#7 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Template.php(379): Twig\Template->display(Array)
+#8 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\TemplateWrapper.php(40): Twig\Template->render(Array, Array)
+#9 D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Environment.php(277): Twig\TemplateWrapper->render(Array)
+#10 D:\Dropbox\#programování\#projekt\ins_app\Core\View.php(41): Twig\Environment->render('User/index.html', Array)
+#11 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(63): Core\View::renderTemplate('User/index.html', Array)
+#12 [internal function]: App\Controllers\Home->loginAction()
+#13 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#14 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#15 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#16 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\vendor\twig\twig\src\Environment.php(358) : eval()'d code' on line 62
