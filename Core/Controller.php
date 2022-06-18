@@ -88,7 +88,7 @@ abstract class Controller
      * Remember the requested page for later, then redirect to the login page.
      *
      * @return void
-     */
+    
     public function requireLogin()
     {
         if (! Auth::getUser()) {
@@ -98,6 +98,6 @@ abstract class Controller
             $this->redirect('/login');
         }
     }
-
+ */
 
 }

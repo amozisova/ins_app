@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Log in{% endblock %}
+
+{% block body %}
+
+<h1>Pro přístup do aplikace se přihlašte zadáním přihlašovacích údajů do formuláře níže:</h1>
+
+<form method="post" action="/login/login">
+    <label for="email">Vaše emailová adresa:</label>
+    <input type="email" name="email" id="email" placeholder="váš e-mail" required autofocus value="{{ email }}">
+    <p>
+        <label for="password">Vaše heslo:</label>
+        <input type="password" name="password" id="password" placeholder="vaše heslo" required>
+    </p>
+    <p>
+        <button type="submit">Přihlásit se</button>
+    </p>
+</form>
+
+{% endblock %}

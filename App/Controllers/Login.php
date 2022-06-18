@@ -3,19 +3,51 @@
 namespace App\Controllers;
 
 use \Core\View;
-use \App\Auth;
 use \App\Models\User;
 
-
-class Login extends \Core\Controller { 
+/**
+ * Login controller
+ *
+ * PHP version 7.0
+ */
+class Login extends \Core\Controller
+{
 
     /**
-     * Log in a user
+     * Show the login page
      *
      * @return void
      */
+    public function newAction()
+    {
+        View::renderTemplate('Login/new.html');
+    }
 
-     /*
+    /**
+     *  checks data submitted via login form 
+     *  if verified, logins user
+     * 
+     */
+    public function loginAction()
+    {
+        $submittedData = new User;
+        $user = $submittedData->checkLogin($_POST['email'], $_POST['password']);
+
+        if ($user) {
+
+            $_SESSION['user_id'] = $user->id;
+
+            $this->redirect('/');
+            // View::renderTemplate('User/index.html', ['name' => $_POST['email'],]);
+        } else {
+
+            View::renderTemplate('Login/new.html', ['email' => $_POST['email'],]);
+            echo 'Chybné přihlašovací údaje. Zkuste to znovu.';
+        }
+    }
+}
+
+ /*
     public function createAction()
     {
         $user = User::authenticate($_POST['email'], $_POST['password']);
@@ -36,4 +68,3 @@ class Login extends \Core\Controller {
         }
     }
 */
-}
