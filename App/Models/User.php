@@ -73,7 +73,7 @@ class User extends \Core\Model
      * @param string $id The user ID
      *
      * @return mixed User object if found, false otherwise
-     */
+  
     public static function findByID($id)
     {
         $sql = 'SELECT * FROM clients WHERE client_id = :id';
@@ -84,7 +84,7 @@ class User extends \Core\Model
         $stmt->execute();
         return $stmt->fetch();
     }
-
+   */
 
 
 
