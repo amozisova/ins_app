@@ -7,8 +7,10 @@
 </head>
 <body>
     <nav>
-        <a href="/">Homepage</a> |
-        <a href="/posts/index">Posts</a>
+        <ul>
+        {% block nav %}
+        {% endblock %}
+        </ul>
     </nav>
 
     {% block body %}

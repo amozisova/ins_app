@@ -2,14 +2,40 @@
 
 {% block title %}Insurance App - homepage{% endblock %}
 
+{% block nav %}
+{% if session.user_id %}
+<li><a href="/">Homepage</a></li>
+<li><a href="#">Pojištění</a></li>
+<li><a href="#">Pojistné události</a></li>
+<li><a href="#">Osobní údaje</a></li>
+<li><a href="/logout">Odhlásit se</a>.</li>
+
+{% else %}
+<li><a href="/">Homepage</a></li>
+<li><a href="/login/new">Přihlásit</a></li>
+{% endif %}
+
+{% endblock %}
+
 {% block body %}
 
 <h1>Vítejte v aplikaci pro správu a evidenci pojištění</h1>
 
 {% if session.user_id %}
-        User with ID {{ session.user_id }} is logged in. <a href="/logout">Log out</a>.
+        ,{{ session.name }} {{ session.surname}}.
+        User with ID {{ session.user_id }} is logged in. 
 {% else %}
-    <a href="/login/new">Přihlašte se do svého účtu</a>.
+<form method="post" action="/login/login">
+    <label for="email">Vaše emailová adresa:</label>
+    <input type="email" name="email" id="email" placeholder="váš e-mail" required autofocus value="{{ email }}">
+    <p>
+        <label for="password">Vaše heslo:</label>
+        <input type="password" name="password" id="password" placeholder="vaše heslo" required>
+    </p>
+    <p>
+        <button type="submit">Přihlásit se</button>
+    </p>
+</form>
 {% endif %}
 
 {% endblock %}

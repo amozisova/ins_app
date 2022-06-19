@@ -13,7 +13,7 @@ class User extends \Core\Model
      * Error messages
      * @var array
      */
-    //public $errors = [];
+    //public $errors = []; // v řešenní !!!
 
     /**
      * Class constructor
@@ -85,9 +85,6 @@ class User extends \Core\Model
         return $stmt->fetch();
     }
    */
-
-
-
 
     public function getUserName()
     {

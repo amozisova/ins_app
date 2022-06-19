@@ -8,7 +8,6 @@ use \App\Models\User;
 /**
  * Login controller
  *
- * PHP version 7.0
  */
 class Login extends \Core\Controller
 {
@@ -24,9 +23,11 @@ class Login extends \Core\Controller
     }
 
     /**
-     *  checks data submitted via login form 
-     *  if verified, logins user
+     * Log in a user
+     * Checks data submitted via login form 
+     * if verified, logins user
      * 
+     * @return void
      */
     public function loginAction()
     {
@@ -38,12 +39,14 @@ class Login extends \Core\Controller
             session_regenerate_id(true);
 
             $_SESSION['user_id'] = $user->client_id;
+            $_SESSION['name'] = $user->name;
+            $_SESSION['surname'] = $user->surname;
 
             $this->redirect('/');
             // View::renderTemplate('User/index.html', ['name' => $_POST['email'],]);
         } else {
 
-            View::renderTemplate('Login/new.html', ['email' => $_POST['email'],]);
+            View::renderTemplate('Home/index.html', ['email' => $_POST['email'],]);
             echo 'Chybné přihlašovací údaje. Zkuste to znovu.';
         }
     }
@@ -80,25 +83,3 @@ class Login extends \Core\Controller
     }
 
 }
-
- /*
-    public function createAction()
-    {
-        $user = User::authenticate($_POST['email'], $_POST['password']);
-
-        if ($user) {
-
-            Auth::login($user);
-
-            $this->redirect(Auth::getReturnToPage());
-
-        } else {
-
-            View::renderTemplate('Home/index.html', [
-                'email' => $_POST['email'],
-            ]);
-
-            echo ('Chyba přihlášení!'); //tbd
-        }
-    }
-*/
