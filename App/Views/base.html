@@ -9,8 +9,9 @@
     <nav>
         <ul>
         {% block nav %}
+        {{ include('nav.html') }}
         {% endblock %}
-        </ul>
+    </ul>
     </nav>
 
     {% block body %}

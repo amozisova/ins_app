@@ -2,21 +2,6 @@
 
 {% block title %}Insurance App - homepage{% endblock %}
 
-{% block nav %}
-{% if session.user_id %}
-<li><a href="/">Homepage</a></li>
-<li><a href="#">Pojištění</a></li>
-<li><a href="#">Pojistné události</a></li>
-<li><a href="#">Osobní údaje</a></li>
-<li><a href="/logout">Odhlásit se</a>.</li>
-
-{% else %}
-<li><a href="/">Homepage</a></li>
-<li><a href="/login/new">Přihlásit</a></li>
-{% endif %}
-
-{% endblock %}
-
 {% block body %}
 
 <h1>Vítejte v aplikaci pro správu a evidenci pojištění</h1>
