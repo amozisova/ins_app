@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - osobní údaje klienta{% endblock %}
+
+{% block body %}
+
+    <h1>Vaše osobní údaje</h1>
+    <p>Vítejte, {{ name }}!</p>
+
+    <ul>
+        {% for colour in colours %}
+            <li>{{ colour }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

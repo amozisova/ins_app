@@ -86,7 +86,14 @@ class User extends \Core\Model
     }
    */
 
-    public function getUserName()
+    public function getUserDetails($id)
     {
+        $sql = 'SELECT * FROM clients WHERE client_id = :id';
+        $db = static::getDB();
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+        $stmt->execute();
+        return $stmt->fetch();
     }
 }
