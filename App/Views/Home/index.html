@@ -25,6 +25,7 @@
         ,{{ session.name }} {{ session.surname}}.
         User with ID {{ session.user_id }} is logged in. 
 {% else %}
+<h2>Pro přístup do aplikace se přihlašte zadáním přihlašovacích údajů do formuláře níže:</h2>
 <form method="post" action="/login/login">
     <label for="email">Vaše emailová adresa:</label>
     <input type="email" name="email" id="email" placeholder="váš e-mail" required autofocus value="{{ email }}">
