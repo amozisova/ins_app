@@ -30,7 +30,19 @@ class Users extends \Core\Controller
     
     }
 
-    //funguje, ale je to nešikovné spojení - dořešit
+    public function editAction()
+    {
+        View::renderTemplate('UserDetails/edit.html');
+
+    
+    }
+
+    public function submitAction()
+    {
+        View::renderTemplate('UserDetails/edit.html');
+
+    
+    }
 
 
 /*

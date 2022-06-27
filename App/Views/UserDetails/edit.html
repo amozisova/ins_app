@@ -5,7 +5,7 @@
 {% block body %}
 
     <h1>Vaše osobní údaje</h1>
-{# přemýšlím, že by se to zde dalo podmínkou rozdělit, že když něco, tak se údaje zobrazí v tabulce a když dám "editovat", tak se zobrazí ve formuláři, který půjde odeslat do databáze metodou post #}
+
 <table>
         <tr>Vaše osobní údaje</tr>
         
@@ -17,7 +17,7 @@
         {% endfor %}
     </table>
 
-    <p><a href="/Users/edit"><button>Změnit osobní údaje</button></a></p>
+    <p><a href="/Users/submit"><button>Uložit změny</button></a></p>
 
 
 {% endblock %}

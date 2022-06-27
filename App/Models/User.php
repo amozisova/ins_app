@@ -98,6 +98,20 @@ class User extends \Core\Model
 
         return (array)$userData;
     }
+
+    private function updateUserDetails($id, $query = '*')
+    {
+        $sql = 'UPDATE clients, SET ' . $query . ' WHERE client_id = :id';
+        $db = static::getDB();
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+
+
+
+
     /**private function getPassword($userData) {
     $hashedPassword=$userData['password_hash'];
     $getPassword
