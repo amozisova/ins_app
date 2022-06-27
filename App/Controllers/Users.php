@@ -19,11 +19,15 @@ class Users extends \Core\Controller
      */
     public function viewAction()
     {
-        View::renderTemplate('UserDetails/index.html');
-        $UserDetails = new User;
-        $showData = $UserDetails->getUserDetails($_SESSION['user_id']);
-        echo $showData->name;
-        echo $showData->surname;
+  
+        $user = new User;
+        $query='name, surname, street, city, zipcode, email, phone';
+        $userData = $user->getUserDetails($_SESSION['user_id'],$query);
+    
+        View::renderTemplate('UserDetails/index.html', ['user' => $userData]);
+        //print_r($userData); //je to array
+        //echo $showData['street'];
+    
     }
 
     //funguje, ale je to nešikovné spojení - dořešit
@@ -32,7 +36,7 @@ class Users extends \Core\Controller
 /*
     public function showDataAction() {
         $UserDetails = new User;
-        $showData = $UserDetails->getUserDetails($_SESSION['user_id']);
+        $showData = $UserDetails->showUserDetails($_SESSION['user_id']);
         echo $showData->name;
         echo $showData->surname;
        

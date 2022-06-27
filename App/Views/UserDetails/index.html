@@ -5,12 +5,17 @@
 {% block body %}
 
     <h1>Vaše osobní údaje</h1>
-    <p>Vítejte, {{ name }}!</p>
 
-    <ul>
-        {% for colour in colours %}
-            <li>{{ colour }}</li>
+<table>
+        <tr>Vaše osobní údaje</tr>
+        
+        {% for key, value in user %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 
 {% endblock %}
+

@@ -7,8 +7,7 @@
 <h1>Vítejte v aplikaci pro správu a evidenci pojištění</h1>
 
 {% if session.user_id %}
-        ,{{ session.name }} {{ session.surname}}.
-        User with ID {{ session.user_id }} is logged in. 
+<p>Vítejte, {{ session.name }}!</p>
 {% else %}
 <h2>Pro přístup do aplikace se přihlašte zadáním přihlašovacích údajů do formuláře níže:</h2>
 <form method="post" action="/login/login">

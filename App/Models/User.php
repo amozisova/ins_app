@@ -66,34 +66,40 @@ class User extends \Core\Model
         return false;
     }
 
+    /**
+     * Connects to database and fetch data from the clients table
+     *
+     * @param int $id  ID number of client
+     * @param string $query  DB table rows to be fetched
+     * @return void
+     */
+    private function fetchUserDetails($id, $query = '*')
+    {
+        $sql = 'SELECT ' . $query . ' FROM clients WHERE client_id = :id';
+        $db = static::getDB();
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+        $stmt->execute();
+        $userData = $stmt->fetch();
+        return $userData;
+    }
 
     /**
-     * Find a user model by ID
+     * returns data from database to be viewed
      *
-     * @param string $id The user ID
-     *
-     * @return mixed User object if found, false otherwise
-  
-    public static function findByID($id)
+     * @param int $id  ID number of client
+     * @param string $query  DB table rows to be fetched
+     * @return void
+     */
+    public function getUserDetails($id, $query = '*')
     {
-        $sql = 'SELECT * FROM clients WHERE client_id = :id';
-        $db = static::getDB();
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
-        $stmt->execute();
-        return $stmt->fetch();
-    }
-   */
+        $userData = $this->fetchUserDetails($id, $query);
 
-    public function getUserDetails($id)
-    {
-        $sql = 'SELECT * FROM clients WHERE client_id = :id';
-        $db = static::getDB();
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
-        $stmt->execute();
-        return $stmt->fetch();
+        return (array)$userData;
     }
+    /**private function getPassword($userData) {
+    $hashedPassword=$userData['password_hash'];
+    $getPassword
+}**/
 }
