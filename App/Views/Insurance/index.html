@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - pojištění klienta{% endblock %}
+
+{% block body %}
+
+    <h1>Vaše pojistné smlouvy</h1>
+
+<table>
+        <tr><td>Pojištění vozidel</td></tr>
+        <tr><td>Pojištění majetku a odpovědnosti</td></tr>
+        <tr><td>Pojištění osob</td></tr>
+        <tr><td>Cestovní pojištění</td></tr>
+        
+        {#% for key, value in user %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %#}
+    </table>
+
+{% endblock %}
+
