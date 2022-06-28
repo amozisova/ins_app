@@ -11,7 +11,6 @@ use \App\Models\User;
  */
 class Users extends \Core\Controller
 {
-
     /**
      * Show the User Details page
      *
@@ -19,39 +18,61 @@ class Users extends \Core\Controller
      */
     public function viewAction()
     {
-  
-        $user = new User;
-        $query='name, surname, street, city, zipcode, email, phone';
-        $userData = $user->getUserDetails($_SESSION['user_id'],$query);
-    
+        $userData = $this->showClientData();
+
         View::renderTemplate('UserDetails/index.html', ['user' => $userData]);
-        //print_r($userData); //je to array
-        //echo $showData['street'];
-    
     }
 
+    /**
+     * Let user edit their contact details
+     *
+     * @return void
+     */
     public function editAction()
     {
-        View::renderTemplate('UserDetails/edit.html');
+        $userData = $this->showClientData();
 
-    
+        View::renderTemplate('UserDetails/edit.html', ['user' => $userData]);
     }
 
+    /**
+     * Let user submit changes to their contact details via form
+     *
+     * @return void
+     */
     public function submitAction()
     {
-        View::renderTemplate('UserDetails/edit.html');
+        $this->editClientData();
 
-    
+        View::renderTemplate('UserDetails/submit.html', ['test' => $_POST]);
     }
 
-
-/*
-    public function showDataAction() {
-        $UserDetails = new User;
-        $showData = $UserDetails->showUserDetails($_SESSION['user_id']);
-        echo $showData->name;
-        echo $showData->surname;
-       
+    /**
+     * Function to display contact details of a user
+     * Sends user ID and client data to User model
+     *
+     * @return void
+     */
+    private function showClientData()
+    {
+        $user = new User;
+        $id = $_SESSION['user_id'];
+        $query = 'name, surname, street, city, zipcode, email, phone';
+        $userData = $user->getClientData($id, $query);
+        return $userData;
     }
-*/
+
+/**
+ * Function to edit contact details of a user
+ * passes data submitted by user via form to User model
+ *
+ * @return void
+ */
+   private function editClientData()
+    {
+        $user = new User;
+        $id = $_SESSION['user_id'];
+        $formData = $_POST;
+        $user->setClientData($id, $formData);
+    }
 }
