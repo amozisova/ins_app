@@ -42,9 +42,9 @@ class Users extends \Core\Controller
      */
     public function submitAction()
     {
-        $this->editClientData();
+        $this->editClientData($_POST);
 
-        View::renderTemplate('UserDetails/submit.html', ['test' => $_POST]);
+        View::renderTemplate('UserDetails/submit.html', ['edited' => $_POST]);
     }
 
     /**
@@ -58,24 +58,29 @@ class Users extends \Core\Controller
         $user = new User;
         $id = $_SESSION['user_id'];
         $query = 'name, surname, street, city, zipcode, email, phone';
-        $tableName='clients';
+        $tableName = 'clients';
         $userData = $user->getClientData($id, $tableName, $query);
         return $userData;
     }
 
-/**
- * Function to edit contact details of a user
- * passes data submitted by user via form to User model
- *
- * @return void
- */
-   private function editClientData()
+    /**
+     * Function to edit contact details of a user
+     * checks data submitted by user via form and passes them to User model
+     *
+     * @return void
+     */
+    private function editClientData()
     {
         $user = new User;
         $id = $_SESSION['user_id'];
-        $tableName='clients';
-        $formData = $_POST;
-        $user->setClientData($id, $tableName, $formData);
-    }
+        $tableName = 'clients';
+        $_POST = array_filter($_POST); //drop empty values
 
+        if (empty($_POST)) {
+            return;
+        } else {
+            $formData = $_POST;
+            $user->setClientData($id, $tableName, $formData);
+        }
+    }
 }

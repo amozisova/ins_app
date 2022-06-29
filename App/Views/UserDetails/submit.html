@@ -6,13 +6,20 @@
 
     <h1>Vaše osobní údaje</h1>
 
-    <p>Změny byly uloženy.</p>
 
 
-    {% for key, value in test %}
+    {% if edited is empty %}
+    <p>Nebyla provedena žádná změna.</p>
 
+    {% else %}
+    <p>Následující změny byly uloženy:</p>
+
+    {% for key, value in edited %}
     <p>{{ key }} = {{ value }}</p> {# zatím ponechávám výpis kompletního pole, pro přehled nad změnami #}
-
     {% endfor %}
+
+    {% endif %}
     
+    <p><a href="/Users/view">Zpět na přehled osobních údajů</a>
+
 {% endblock %}
