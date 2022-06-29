@@ -6,19 +6,18 @@
 
     <h1>Vaše pojistné smlouvy</h1>
 
-<table>
-        <tr><td>Pojištění vozidel</td></tr>
-        <tr><td>Pojištění majetku a odpovědnosti</td></tr>
-        <tr><td>Pojištění osob</td></tr>
-        <tr><td>Cestovní pojištění</td></tr>
-        
-        {#% for key, value in user %}
+
+    {% for type, items in insurance %}
+       <br>
+    <table>
+        {% for key, value in items %}
         <tr>
             <td>{{ key }}</td>
             <td>{{ value }}</td>
         </tr>
-        {% endfor %#}
+        {% endfor %}
     </table>
+    {% endfor %}
 
 {% endblock %}
 

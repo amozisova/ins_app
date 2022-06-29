@@ -11,7 +11,7 @@
     <form method="post" action="/Users/submit">
         <h3>Vaše osobní údaje</h3>
         
-        {% for key, value in user %}
+        {% for key, value in user.0 %}
 
             <label for {{ key }}>{{ key }}</label>
             <input placeholder="{{ value }}" name="{{ key }}" id="{{ key }}"></input>

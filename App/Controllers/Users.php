@@ -19,7 +19,7 @@ class Users extends \Core\Controller
     public function viewAction()
     {
         $userData = $this->showClientData();
-
+        //print_r($userData);
         View::renderTemplate('UserDetails/index.html', ['user' => $userData]);
     }
 
@@ -58,7 +58,8 @@ class Users extends \Core\Controller
         $user = new User;
         $id = $_SESSION['user_id'];
         $query = 'name, surname, street, city, zipcode, email, phone';
-        $userData = $user->getClientData($id, $query);
+        $tableName='clients';
+        $userData = $user->getClientData($id, $tableName, $query);
         return $userData;
     }
 
@@ -72,7 +73,9 @@ class Users extends \Core\Controller
     {
         $user = new User;
         $id = $_SESSION['user_id'];
+        $tableName='clients';
         $formData = $_POST;
-        $user->setClientData($id, $formData);
+        $user->setClientData($id, $tableName, $formData);
     }
+
 }

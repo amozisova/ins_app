@@ -20,12 +20,13 @@ class User extends \Core\Model
      * @param array $data  Initial property values (optional)
      * @return void
      */
+    /*
     public function __construct($data = [])
     {
         foreach ($data as $key => $value) {
             $this->$key = $value;
         };
-    }
+    }*/
 
     /**
      * Find a user model by email address
@@ -66,47 +67,64 @@ class User extends \Core\Model
      * Connects to database and fetch data from the clients table
      *
      * @param int $id  ID number of client
+     * @param string $tableName  DB table name
      * @param string $query  DB table rows to be fetched
      * @return void
      */
-    private function fetchClientData($id, $query = '*')
+    private function fetchClientData($id, $tableName, $query = '*')
     {
-        $sql = 'SELECT ' . $query . ' FROM clients WHERE client_id = :id';
+        $sql = 'SELECT ' . $query . ' FROM '.$tableName. ' WHERE client_id = :id';
         
         $db = static::getDB();
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->setFetchMode(PDO::FETCH_NAMED);
+        $stmt->execute();
+        $userData = $stmt->fetchAll();
+        return $userData;
+    }
+
+    /*
+    private function DBData($sqlOperation, $query = '*', $DBtable, $condition)
+    {
+        $sql = $sqlOperation . $query . ' FROM '.$DBtable. ' WHERE '.$condition;
+               
+        $db = static::getDB();
+        $stmt = $db->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
         $stmt->execute();
         $userData = $stmt->fetch();
         return $userData;
     }
+    */
 
     /**
      * Returns data from database to be viewed
      * calls fetchClientData function
      *
      * @param int $id  user id from current session
+     * @param string $tableName  name of the database table
      * @param string $query  DB table rows to be fetched
      * @return void
      */
-    public function getClientData($id, $query = '*')
+    public function getClientData($id, $tableName, $query = '*')
     {
-        $userData = $this->fetchClientData($id, $query);
+        $userData = $this->fetchClientData($id, $tableName, $query);
 
-        return (array)$userData;
+        return $userData;
     }
 
     /**
      * Connects to the database and updates clients table
      *
      * @param int $id user id from current session
+     * @param string $tableName name of the database table
      * @param string $sqlQuery
      * @return void
      */
-    private function updateClientData($id, $sqlQuery)
+    private function updateClientData($id, $tableName, $sqlQuery)
     {
-        $sql = 'UPDATE clients SET ' . $sqlQuery . ' WHERE client_id = :id';
+        $sql = 'UPDATE '.$tableName.' SET ' . $sqlQuery . ' WHERE client_id = :id';
         $db = static::getDB();
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -118,14 +136,15 @@ class User extends \Core\Model
      * calls updateClientData function
      *
      * @param int $id user id from current session
+     * @param string $tableName name of the database table
      * @param array $formData submitted by user via form
      * @return void
      */
-    public function setClientData($id, $formData)
+    public function setClientData($id, $tableName, $formData)
     {
         $sqlQuery = $this->formatForSQL($formData);
 
-        $this->updateClientData($id, $sqlQuery);
+        $this->updateClientData($id, $tableName, $sqlQuery);
     }
 
     /**
