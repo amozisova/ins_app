@@ -12,17 +12,23 @@ use \App\Models\User;
 class Insurances extends \Core\Controller
 {
 
-    /**
-     * Show the User Details page
-     *
-     * @return void
-     */
+ /**
+  * Show the user's insurance data
+  *
+  * @return void
+  */
     public function viewAction()
     {
         $userData = $this->showInsuranceData();
         View::renderTemplate('Insurance/index.html', ['insurance' => $userData]);
     }
 
+    /**
+     * Function to call for insurance details of a user
+     * Sends user ID and client data to User model
+     *
+     * @return void
+     */
     private function showInsuranceData()
     {
         $user = new User;
@@ -32,10 +38,4 @@ class Insurances extends \Core\Controller
         $userData = $user->getClientData($id, $tableName, $query);
         return $userData;
     }
-/*
-Pojištění vozidel
-Pojištění majetku a odpovědnosti
-Pojištění osob
-Cestovní pojištění
- */
 }
