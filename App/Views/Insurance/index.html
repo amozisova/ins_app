@@ -5,19 +5,20 @@
 {% block body %}
 
     <h1>Vaše pojistné smlouvy</h1>
-
-
-    {% for type, items in insurance %}
-       <br>
     <table>
-        {% for key, value in items %}
+
+    {% for key, value in userData.user %}
+
+        {% for key, value in translated %}
         <tr>
-            <td>{{ key }}</td>
-            <td>{{ value }}</td>
+            <td>{{ value }}:
+            {% for key, value in userData.user.0|slice(key,1) %}
+            <td>{{ value }}</td>{% endfor %}</td> 
         </tr>
         {% endfor %}
-    </table>
+
     {% endfor %}
+    </table>
 
 {% endblock %}
 

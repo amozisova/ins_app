@@ -153,11 +153,10 @@ class User extends \Core\Model
      * @param array $formdata
      * @return string
      */
-    private function formatForSQL($formdata)
+    private function formatForSQL($formData)
     {
-        $noEmptyValues = (array_filter($formdata)); //drops empty values
         $queryString = '';
-        foreach ($noEmptyValues as $Key => $Value) {
+        foreach ($formData as $Key => $Value) {
             $queryString .= $Key . '=' . '\'' . $Value . '\'' . ', ';
         }
         return rtrim($queryString, " ,"); // returns string key='value', key='value' etc.

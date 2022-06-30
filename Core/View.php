@@ -1,7 +1,7 @@
 <?php
 
 namespace Core;
-
+use App\Helpers\ViewHelper;
 /**
  * View
  */
@@ -29,7 +29,7 @@ class View
             throw new \Exception("$file not found");
         }
     }
-    public static function renderTemplate(string $template, array $args = [])
+    public static function renderTemplate(string $template, array $args=[])
     {
         static $twig = null;
 
@@ -39,6 +39,43 @@ class View
             $twig->addGlobal('session', $_SESSION);   
         }
 
+       //  $singleArr=self::returnSingleArray($args);
+      //   print_r($singleArr);
+        //$userData=$args;
+       
+        //if(!empty($args))
+     if(array_key_exists('user',$args) ) {
+    $translated=self::translateData($args);
+      
+    $args=['userData'=> $args, 'translated' => $translated];
+
+}
+
+
+       
+
+        print("<pre>".print_r($args,true)."</pre>");
+   
+       // print_r($translated);
         echo $twig->render($template, $args);
     }
+
+    /*private static function prepareArguments($userData) {
+        array_push($args, $translated, $singleArr);
+    
+    }*/
+
+    private static function translateData($userData) {
+        $helper=new ViewHelper;
+        return $helper->translate($userData);
+    
+    }
+
+    private static function returnSingleArray($userData) {
+        $helper=new ViewHelper;
+        return $helper->multipleToSingle($userData);
+    
+    }
+
+
 }

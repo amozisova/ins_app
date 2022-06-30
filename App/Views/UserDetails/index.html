@@ -7,17 +7,28 @@
     <h1>Vaše osobní údaje</h1>
 {# přemýšlím, že by se to zde dalo podmínkou rozdělit, že když něco, tak se údaje zobrazí v tabulce a když dám "editovat", tak se zobrazí ve formuláři, který půjde odeslat do databáze metodou post #}
 <table>
-        <tr>Vaše osobní údaje</tr>
-        
-        {% for key, value in user.0 %}
-        <tr>
-            <td>{{ key }}</td>
-            <td>{{ value }}</td>
-        </tr>
-        {% endfor %}
+    <tr>Vaše osobní údaje</tr>
+ 
+    {% for key, value in translated %}
+            <tr>
+                <td>{{ value }}:
+
+
+                    {% for value in userData.user.0|slice(key,1) %}
+                    <td>{{ value }}</td>{% endfor %}</td> 
+            </tr>
+
+
+
+    {% endfor %}
+
     </table>
 
     <p><a href="/Users/edit"><button>Změnit osobní údaje</button></a></p>
+
+
+
+
 
 
 {% endblock %}

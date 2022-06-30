@@ -11,15 +11,17 @@
     <form method="post" action="/Users/submit">
         <h3>Vaše osobní údaje</h3>
         
-        {% for key, value in user.0 %}
+        {% for key, value in translated %}
 
-            <label for {{ key }}>{{ key }}</label>
+            <label for {{ value }}>{{ value }}</label>
+            {% for key, value in userData.user.0|slice(key,1) %}
             <input placeholder="{{ value }}" name="{{ key }}" id="{{ key }}"></input>
+            {% endfor %}
             <br>
 
         {% endfor %}
     
-
+        
     <p><a href="/Users/view">Zpět</a> <input type="submit" value="Uložit změny"></input></p>
 </form>
 

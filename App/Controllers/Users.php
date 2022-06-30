@@ -3,7 +3,8 @@
 namespace App\Controllers;
 
 use \Core\View;
-use \App\Models\User;
+use App\Models\User;
+use App\Helpers\ViewHelper;
 
 /**
  * User controller
@@ -19,8 +20,13 @@ class Users extends \Core\Controller
     public function viewAction()
     {
         $userData = $this->showClientData();
-        //print_r($userData);
-        View::renderTemplate('UserDetails/index.html', ['user' => $userData]);
+       // $translated=$this->translateData($userData);
+      //  print_r($translated);
+      //  print_r($userData);
+
+//print_r(ViewHelper::translate($userData));
+
+        View::renderTemplate('UserDetails/index.html', ['user' => $userData]);//, 'translated'=>$translated]);
     }
 
     /**
@@ -83,4 +89,11 @@ class Users extends \Core\Controller
             $user->setClientData($id, $tableName, $formData);
         }
     }
+/*
+private function translateData($userData) {
+    $helper=new ViewHelper;
+    return $helper->translate($userData);
+}
+*/
+
 }

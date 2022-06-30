@@ -3,8 +3,8 @@
 namespace App\Controllers;
 
 use \Core\View;
-use \App\Models\User;
-
+use App\Models\User;
+use App\Helpers\ViewHelper;
 /**
  * User controller
  *
@@ -20,7 +20,8 @@ class Insurances extends \Core\Controller
     public function viewAction()
     {
         $userData = $this->showInsuranceData();
-        View::renderTemplate('Insurance/index.html', ['insurance' => $userData]);
+
+        View::renderTemplate('Insurance/index.html', ['user' => $userData]);
     }
 
     /**
