@@ -34,7 +34,7 @@ class Events extends \Core\Controller
       $user = new User;
       $id = $_SESSION['user_id'];
       $query = 'event_num, ins_cat, ins_number, event_date,	status';
-      $tableName='ins_det';
+      $tableName='ins_details';
       $userData = $user->getClientData($id, $tableName, $query);
       return $userData;
   }
