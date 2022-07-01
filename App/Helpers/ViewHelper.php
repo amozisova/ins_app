@@ -22,6 +22,10 @@ class ViewHelper
         'startdate'    => 'platnost od',
         'enddate'    => 'platnost do',
         'ins_status' => 'stav',
+
+        'event_num' => 'číslo pojistné události',
+        'event_date' => 'datum vzniku',
+        'status' => 'stav',
     ];
 
 

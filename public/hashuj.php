@@ -9,7 +9,7 @@
 
 
 
-$sadaHesel = ['jedna','dva','tri','ctyri','pet'];
+$sadaHesel = ['jedna','dva','tri','ctyri','pet','adela'];
 
 
 foreach ($sadaHesel as $pswd) {
@@ -29,6 +29,8 @@ $2y$10$xUSV1OuqZzq30kFhCNa5eeKupi64wYKvM1zf3cPFtAp1D/lf28vZW
 $2y$10$k.iy4sPJNVWiHjYFCeItO.RKBGNf4jaF4cZibeScxeTkQQw0kn8cK
 
 $2y$10$FcYHqp6/L9tASHW7Bi33eObFp4146u1fvWnjvZWxAIyZl8uj4WXoC
+
+$2y$10$5ocY2bKS5Yce3oVYJdRqbONPMjVPIV2Ah49nvgZnqLvvv15LA9JEO
 */
 
 
