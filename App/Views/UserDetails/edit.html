@@ -14,7 +14,7 @@
         {% for key, value in translated %}
 
             <label for {{ value }}>{{ value }}</label>
-            {% for key, value in userData.user.0|slice(key,1) %}
+            {% for key, value in userData.0|slice(key,1) %}
             <input placeholder="{{ value }}" name="{{ key }}" id="{{ key }}"></input>
             {% endfor %}
             <br>

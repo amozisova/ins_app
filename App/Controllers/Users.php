@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\User;
-use App\Helpers\ViewHelper;
 
 /**
  * User controller
@@ -13,24 +12,19 @@ use App\Helpers\ViewHelper;
 class Users extends \Core\Controller
 {
     /**
-     * Show the User Details page
+     * Display the User Details page
      *
      * @return void
      */
     public function viewAction()
     {
         $userData = $this->showClientData();
-       // $translated=$this->translateData($userData);
-      //  print_r($translated);
-      //  print_r($userData);
 
-//print_r(ViewHelper::translate($userData));
-
-        View::renderTemplate('UserDetails/index.html', ['user' => $userData]);//, 'translated'=>$translated]);
+        View::renderTemplate('UserDetails/index.html', (array) $userData);
     }
 
     /**
-     * Let user edit their contact details
+     * Display the edit details page
      *
      * @return void
      */
@@ -38,11 +32,12 @@ class Users extends \Core\Controller
     {
         $userData = $this->showClientData();
 
-        View::renderTemplate('UserDetails/edit.html', ['user' => $userData]);
+        View::renderTemplate('UserDetails/edit.html', (array) $userData);
     }
 
     /**
-     * Let user submit changes to their contact details via form
+     * Display the submit details page
+     * Submit changes to user's contact details via form
      *
      * @return void
      */
@@ -50,7 +45,7 @@ class Users extends \Core\Controller
     {
         $this->editClientData($_POST);
 
-        View::renderTemplate('UserDetails/submit.html', ['edited' => $_POST]);
+        View::renderTemplate('UserDetails/submit.html', (array) $_POST);
     }
 
     /**
@@ -89,11 +84,4 @@ class Users extends \Core\Controller
             $user->setClientData($id, $tableName, $formData);
         }
     }
-/*
-private function translateData($userData) {
-    $helper=new ViewHelper;
-    return $helper->translate($userData);
-}
-*/
-
 }

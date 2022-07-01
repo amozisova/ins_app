@@ -1,7 +1,9 @@
 <?php
 
 namespace Core;
+
 use App\Helpers\ViewHelper;
+
 /**
  * View
  */
@@ -16,7 +18,6 @@ class View
      *
      *@return void
      */
-
     public static function render($view, $args = [])
     {
         extract($args, EXTR_SKIP); //extracting array elements into individual variables
@@ -29,53 +30,44 @@ class View
             throw new \Exception("$file not found");
         }
     }
-    public static function renderTemplate(string $template, array $args=[])
+
+    /**
+     * Render a view template
+     *
+     * @param string $template The template
+     * @param array $args Data passed into the view template
+     * @return void
+     */
+    public static function renderTemplate(string $template, array $args = [])
     {
         static $twig = null;
 
         if ($twig === null) {
             $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/App/Views');
             $twig = new \Twig\Environment($loader);
-            $twig->addGlobal('session', $_SESSION);   
+            $twig->addGlobal('session', $_SESSION);
         }
 
-       //  $singleArr=self::returnSingleArray($args);
-      //   print_r($singleArr);
-        //$userData=$args;
+        // check if arguments were passed from controller
+        // formate passed arguments
+        if (!empty($args)) {
+            $translated = self::formatArguments($args);
+            $args = ['userData' => $args, 'translated' => $translated];
+        }
        
-        //if(!empty($args))
-     if(array_key_exists('user',$args) ) {
-    $translated=self::translateData($args);
-      
-    $args=['userData'=> $args, 'translated' => $translated];
-
-}
-
-
-       
-
-        print("<pre>".print_r($args,true)."</pre>");
-   
-       // print_r($translated);
+        //renders View
         echo $twig->render($template, $args);
     }
 
-    /*private static function prepareArguments($userData) {
-        array_push($args, $translated, $singleArr);
-    
-    }*/
-
-    private static function translateData($userData) {
-        $helper=new ViewHelper;
-        return $helper->translate($userData);
-    
+    /**
+     * Call for formatting of arguments passed from the controller
+     *
+     * @param array $args Array of data from the controller
+     * @return array
+     */
+    private static function formatArguments($args)
+    {
+        $helper = new ViewHelper;
+        return  $helper->translate($args);
     }
-
-    private static function returnSingleArray($userData) {
-        $helper=new ViewHelper;
-        return $helper->multipleToSingle($userData);
-    
-    }
-
-
 }

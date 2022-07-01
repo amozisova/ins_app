@@ -6,14 +6,19 @@
 
     <h1>Vaše osobní údaje</h1>
 
-    {% if edited is empty %}
+    {% if userData is empty %}
     <p>Nebyla provedena žádná změna.</p>
 
     {% else %}
     <p>Následující změny byly uloženy:</p>
 
-    {% for key, value in edited %}
-    <p>{{ key }} = {{ value }}</p>
+    {% for key, value in translated %}
+    <p> {{ value }}:
+
+        {% for key, value in userData|slice(key,1) %}
+       
+        {{ value }} {% endfor %}
+       </p>
     {% endfor %}
 
     {% endif %}

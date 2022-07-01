@@ -6,19 +6,21 @@
 
     <h1>Vaše pojistné smlouvy</h1>
     <table>
+        
+        {# výpis multiarray #}
+            <tr>
+                {% for key, value in translated %}
+                    <td>{{value|e }}</td>
+                {% endfor %}
+            </tr>
 
-    {% for key, value in userData.user %}
-
-        {% for key, value in translated %}
-        <tr>
-            <td>{{ value }}:
-            {% for key, value in userData.user.0|slice(key,1) %}
-            <td>{{ value }}</td>{% endfor %}</td> 
-        </tr>
-        {% endfor %}
-
-    {% endfor %}
-    </table>
+            {% for row in userData %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell|e }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+            {% endfor %}
 
 {% endblock %}
-

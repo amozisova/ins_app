@@ -4,11 +4,15 @@ namespace App\Helpers;
 
 class ViewHelper
 {
-
-    public $dictionary = [
+    /**
+     * Dictionary for translation of database data to the view
+     *
+     * @var array
+     */
+    private array $dictionary = [
         'name' => 'jméno',
         'surname' => 'příjmení',
-        'street' => 'adresa',
+        'street' => 'ulice, číslo',
         'city' => 'město',
         'zipcode' =>    'PSČ',
         'phone' =>    'telefon',
@@ -21,7 +25,13 @@ class ViewHelper
     ];
 
 
-
+    /**
+     * Display formatted names of database data in a view
+     * Translate data passed from the controller to the view according to the $dictionary
+     *
+     * @param array $userData data passed to View from Controller
+     * @return array
+     */
     public function translate($userData)
     {
         $singleArray = $this->multipleToSingle($userData);
@@ -36,33 +46,37 @@ class ViewHelper
         return $translated;
     }
 
+    /**
+     * Extract keys from array and turn them into values
+     *
+     * @param array $singleArray 
+     * @return array 
+     */
     private function getKeys(array $singleArray)
     {
-
         return array_keys($singleArray);
     }
 
-
-    public function multipleToSingle(array $array)
+    /**
+     * Remove multiple nesting of array data
+     * Iterrates over multidimensional array to remove several layers of nesting
+     *
+     * @param array $array
+     * @return array
+     */
+    private function multipleToSingle(array $multiArray)
     {
-        $singleArray = [];
+        $simpleArray = [];
 
-
-        foreach ($array as $item) {
+        foreach ($multiArray as $item) {
 
             if (is_array($item)) {
 
-                foreach ($item as $single) {
-                    $singleArray = array_merge($single);
-                } 
-                
+                $simpleArray =  array_merge_recursive($item);
             } else {
-                    $singleArray=$item;
-                }
+                return $multiArray;
             }
-
-        return $singleArray;
+        }
+        return $simpleArray;
     }
 }
-    
-

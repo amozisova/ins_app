@@ -13,7 +13,7 @@ class Insurances extends \Core\Controller
 {
 
  /**
-  * Show the user's insurance data
+  * Display the user's insurance page
   *
   * @return void
   */
@@ -21,7 +21,7 @@ class Insurances extends \Core\Controller
     {
         $userData = $this->showInsuranceData();
 
-        View::renderTemplate('Insurance/index.html', ['user' => $userData]);
+        View::renderTemplate('Insurance/index.html', (array) $userData);
     }
 
     /**
