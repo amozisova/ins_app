@@ -116,10 +116,10 @@ class Users extends \Core\Controller
         $dataCheck = $_POST;
 
         //verify password
-        $passwordChecked = $this->verifyLoginData($dataCheck);
+        $updateStatus = $this->verifyLoginData($dataCheck);
 
         //TESTING//
-        print_r($passwordChecked);
+        print_r($updateStatus);
 
         // pass data to View
         View::renderTemplate('UserDetails/submitLogin.html', (array) $_POST);
@@ -141,11 +141,13 @@ class Users extends \Core\Controller
         //check if new password was added and typed correctly
         if (empty($dataCheck['newpassword']) || empty($dataCheck['newpassword_repeat'])) {
 
-            if ($dataCheck['newpassword'] !== $dataCheck['newpassword_repeat']) {
-                array_push($errorMsg, 'Zadaná hesla se neshodují.');
-                return $errorMsg;
-            }
             array_push($errorMsg, 'Nové heslo nebylo správně zadáno. Zadejte znovu.');
+            return $errorMsg;
+        }
+        //check if new password was confirmed by repeated entry
+        if ($dataCheck['newpassword'] !== $dataCheck['newpassword_repeat']) {
+            array_push($errorMsg, 'Zadaná hesla se neshodují.');
+            return $errorMsg;
         } else {
 
             //check if change was confirmed by old password
@@ -155,19 +157,25 @@ class Users extends \Core\Controller
             } else {
 
                 if (!empty($errorMsg)) {
-                    return $passwordChecked = $errorMsg;
+                    return $errorMsg;
                 } else {
-                    //send password to model for verification
-                    $user = new User;
-                    $id = $_SESSION['user_id'];
-                    $tableName = 'clients';
-                    $query = 'password_hash';
-                    $enteredPswd = $dataCheck['password'];
-                    $newPswd=$dataCheck['newpassword'];
-                    $passwordChecked = $user->setClientPassword($id, $tableName, $query, $enteredPswd, $newPswd);
-                    return $passwordChecked;
+                    //send password to model for verification and update/if verified
+                    $updateStatus = $this->updatePassword($dataCheck);
+                    return $updateStatus;
                 }
             }
         }
+    }
+
+    private function updatePassword($dataCheck)
+    {
+        $user = new User;
+        $id = $_SESSION['user_id'];
+        $tableName = 'clients';
+        $query = 'password_hash';
+        $enteredPswd = $dataCheck['password'];
+        $newPswd = $dataCheck['newpassword'];
+        $passwordUpdate = $user->setClientPassword($id, $tableName, $query, $enteredPswd, $newPswd);
+        return $passwordUpdate;
     }
 }
