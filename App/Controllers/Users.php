@@ -129,6 +129,7 @@ class Users extends \Core\Controller
     {
         $errorMsg = [];
 
+        // email update TO BE ADDED //
         // print_r($dataCheck);
         /* check if new email was added
         if(!empty($dataCheck['email'])) {
