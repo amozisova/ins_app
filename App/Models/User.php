@@ -169,11 +169,7 @@ class User extends \Core\Model
 
         if($verified==='Heslo bylo ověřeno') {
 
-            $pswd = password_hash($newPswd, PASSWORD_DEFAULT);
-
-            $qlQuery='password_hash='. '\''.$pswd.'\'';
-            
-            $this->updateClientData($id, $tableName, $qlQuery);
+            $this->updateClientPassword($id, $tableName, $newPswd);
 
             return $verified;
 
@@ -184,10 +180,15 @@ class User extends \Core\Model
         return $errorMsg;
 
         }
-
-       // return $passwordCheck;
     }
 
+    private function updateClientPassword($id, $tableName,$newPswd) {
+        $pswd = password_hash($newPswd, PASSWORD_DEFAULT);
+
+        $qlQuery='password_hash='. '\''.$pswd.'\'';
+        
+        $this->updateClientData($id, $tableName, $qlQuery);
+    }
 
 /*
     public function getClientPassword($id, $tableName, $query, $enteredPswd)
