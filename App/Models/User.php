@@ -162,6 +162,62 @@ class User extends \Core\Model
         return rtrim($queryString, " ,"); // returns string key='value', key='value' etc.
     }
 
+
+    public function setClientPassword($id, $tableName, $query, $enteredPswd, $newPswd)
+    {
+        $verified = $this->verifyPassword($id, $tableName, $query, $enteredPswd);
+
+        if($verified==='Heslo bylo ověřeno') {
+
+            $pswd = password_hash($newPswd, PASSWORD_DEFAULT);
+
+            $qlQuery='password_hash='. '\''.$pswd.'\'';
+            
+            $this->updateClientData($id, $tableName, $qlQuery);
+
+            return $verified;
+
+        } else {
+
+        $errorMsg='Heslo je chybně zadáno';
+
+        return $errorMsg;
+
+        }
+
+       // return $passwordCheck;
+    }
+
+
+/*
+    public function getClientPassword($id, $tableName, $query, $enteredPswd)
+    {
+        $passwordCheck = $this->verifyPassword($id, $tableName, $query, $enteredPswd);
+
+        return $passwordCheck;
+    }
+*/
+private function verifyPassword($id, $tableName, $query, $enteredPswd) {
+    
+    $passwordHash=$this->fetchClientData($id, $tableName, $query);
+
+    $hash=$passwordHash[0]['password_hash'];
+
+    if ($hash) {
+        if (password_verify($enteredPswd, $hash)) {
+            $verified='Heslo bylo ověřeno';
+            return $verified;
+        } else {
+            $errorMsg='Heslo je chybně zadáno';
+            return $errorMsg;
+        }
+    } else {
+        $errorMsg=('Heslo nebylo možné ověřit');
+        return $errorMsg;
+    }
+
+}
+
     /**private function getPassword($userData) {
  $hashedPassword=$userData['password_hash'];
  $getPassword }**/

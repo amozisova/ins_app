@@ -13,7 +13,6 @@
             <tr>
                 <td>{{ value }}:
 
-
                     {% for value in userData.0|slice(key,1) %}
                     <td>{{ value }}</td>{% endfor %}</td> 
             </tr>
@@ -27,9 +26,10 @@
     <p><a href="/Users/edit"><button>Změnit osobní údaje</button></a></p>
 
 
+    <div>
+        <p><a href="/Users/editLogin"><button>Změnit přihlašovací údaje</button></a></p>
 
-
-
+    </div>
 
 {% endblock %}
 

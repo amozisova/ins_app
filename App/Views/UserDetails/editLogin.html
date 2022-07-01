@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - přihlašovací údaje klienta{% endblock %}
+
+{% block body %}
+
+    <h1>Vaše přihlašovací údaje</h1>
+
+    <form method="post" action="/Users/submitLogin">
+        <h3>Zadejte nové přihlašovací údaje</h3>
+        
+            <label for="email">Nový email:</label>
+            <input type="email" placeholder="zadejte nový přihlašovací email" name="email" id="email"></input>
+                        
+            <p>
+                <label for="newpassword">Vaše nové heslo:</label>
+                <input type="password" placeholder="zadejte své nové heslo" name="newpassword" id="newpassword"></input>
+            </p>
+
+            <p>
+                <label for="newpassword_repeat">Potvrďte nové heslo:</label>
+                <input type="password" placeholder="znovu zadejte nové heslo" name="newpassword_repeat" id="newpassword_repeat"></input>
+            </p>
+
+            <p>
+                <label for="password">Potvrďte změnu zadáním stávajícího hesla:</label>
+                <input type="password" placeholder="zadejte své stávající heslo" name="password" id="password"></input>
+            </p>
+        
+        <p><input type="submit" value="Uložit změny"></input></p>
+    </form>
+
+    <p><a href="/Users/view">Zpět</a></p> 
+
+{% endblock %}
