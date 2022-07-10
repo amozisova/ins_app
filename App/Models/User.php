@@ -171,11 +171,11 @@ class User extends \Core\Model
 
             $this->updateClientPassword($id, $tableName, $newPswd);
 
-            return $verified;
+            return $verified='Heslo bylo úspěšně změněno.';
 
         } else {
 
-        $errorMsg='Heslo je chybně zadáno';
+        $errorMsg='Původní heslo bylo zadáno chybně.';
 
         return $errorMsg;
 

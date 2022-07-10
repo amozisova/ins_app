@@ -118,11 +118,20 @@ class Users extends \Core\Controller
         //verify password
         $updateStatus = $this->verifyLoginData($dataCheck);
 
-        //TESTING//
-        print_r($updateStatus);
+        //prepare data for view template
+        $dataForView=['data'=> $dataCheck, 'status'=>$updateStatus];
 
+        //TESTING//
+        //print_r($updateStatus);
+        
+        //print("<pre>".print_r($dataForView,true)."</pre>");
+        
+        //print_r($dataForView['data']['newpassword']);
+        
+        
+        
         // pass data to View
-        View::renderTemplate('UserDetails/submitLogin.html', (array) $_POST);
+        View::renderTemplate('UserDetails/submitLogin.html', $dataForView);
     }
 
     private function verifyLoginData($dataCheck)
@@ -160,8 +169,7 @@ class Users extends \Core\Controller
                     return $errorMsg;
                 } else {
                     //send password to model for verification and update/if verified
-                    $updateStatus = $this->updatePassword($dataCheck);
-                    return $updateStatus;
+                    return $this->updatePassword($dataCheck);
                 }
             }
         }
@@ -176,6 +184,6 @@ class Users extends \Core\Controller
         $enteredPswd = $dataCheck['password'];
         $newPswd = $dataCheck['newpassword'];
         $passwordUpdate = $user->setClientPassword($id, $tableName, $query, $enteredPswd, $newPswd);
-        return $passwordUpdate;
+        return (array) $passwordUpdate; //set type array to display update status in the view
     }
 }

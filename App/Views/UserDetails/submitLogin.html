@@ -6,22 +6,16 @@
 
     <h1>Vaše přihlašovací údaje</h1>
 
-    {% if userData is empty %}
-    <p>Nebyla provedena žádná změna.</p>
-
-    {% else %}
-    <p>Následující změny byly uloženy:</p>
-
-    {% for key, value in translated %}
-    <p> {{ value }}:
-
-        {% for key, value in userData|slice(key,1) %}
-       
-        {{ value }} {% endfor %}
-       </p>
-    {% endfor %}
-
-    {% endif %}
+    <table>
+                
+            <tr>
+                    {% for key in userData.status %}
+                    <td> {{ key|e }} </td>
+                {% endfor %}
+            
+            </tr>
+   
+        </table>
     
     <p><a href="/Users/view">Zpět na přehled osobních údajů</a>
 
