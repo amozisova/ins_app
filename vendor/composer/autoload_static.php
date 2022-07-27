@@ -22,6 +22,7 @@ class ComposerStaticInitaab02ed0c87a4de73906e4de6845b514
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'Symfony\\Component\\Asset\\' => 24,
         ),
         'C' => 
         array (
@@ -49,6 +50,10 @@ class ComposerStaticInitaab02ed0c87a4de73906e4de6845b514
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
         ),
         'Core\\' => 
         array (

@@ -1,3 +1,13 @@
+body {
+    background-color: #fff;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.logo {
+    width:10vw;
+}
+
+
 dt,
 dd {
     text-align: left;
