@@ -1,14 +1,17 @@
 {% block nav %}
-{% if session.user_id %}
-<li><a href="/">Homepage</a></li>
-<li><a href="/Insurances/view">Pojištění</a></li>
-<li><a href="/Events/view">Pojistné události</a></li>
-<li><a href="/Users/view">Osobní údaje</a></li>
-<li><a href="/logout">Odhlásit se</a>.</li>
+	{% if session.user_id %}
+    <ul class="navbar">
+	<div class="menu-items">
+				<li><a href="/">Domů</a></li>
+			
+                <li><a href="/Insurances/view">Pojištění</a></li>
+				<li><a href="/Events/view">Pojistné události</a></li>
+				<li><a href="/Users/view">Osobní údaje</a></li>
+                </div>
+				<li><a href="/logout">Odhlásit se</a></li>
+            </ul>
+		{% else %}
 
-{% else %}
-<li><a href="/">Homepage</a></li>
-<li><a href="#login">Přihlásit</a></li>
-{% endif %}
+	{% endif %}
 
 {% endblock %}

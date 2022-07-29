@@ -1,11 +1,236 @@
-body {
-    background-color: #fff;
-    font-family: 'Public Sans', sans-serif;
+/*** default browser style reset***/
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+blockquote,
+ul,
+dl,
+dd {
+    margin: 0;
 }
 
-.logo {
-    width:10vw;
+p {
+    margin: 1rem 0;
 }
+
+
+body {
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Public Sans', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* links */
+a {
+    color: #1D5174;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F94C66;
+}
+
+
+.container {
+    /*display: flex;*/
+    background-color: #FEFEFE;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 80vw;
+
+    /*padding: 1rem 0 2rem;*/
+}
+
+
+.logo {
+    padding: 1rem 2rem;
+    width: 20vh;
+}
+
+/*** navigation ***/
+.navbar {
+    background-color: #3AB0FF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0.5rem;
+
+}
+
+nav a {
+   /* background: #F94C66;
+    color: #f2f2f2;*/
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+  }
+
+nav a:hover {
+    background: #F94C66;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: #f2f2f2;
+    padding: 0.5rem;
+    transition: 0.2s;
+  }
+
+.menu-items {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 3rem;
+    width: 60vw;
+}
+
+/*** main section ***/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    text-align: center;
+    min-height: 60vh;
+}
+
+.content {
+    margin: 10vh;
+}
+
+main h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+main h2 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin: 2vh 0;
+}
+
+/*** form styling ***/
+form {
+    margin: 3rem 2rem;
+    text-align: center;
+}
+
+label {
+    font-weight: 600;
+    padding: 0 0.5rem 0 0;
+}
+
+button {
+    border: 1px solid #FEFEFE;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #3AB0FF;
+    color: #ffffff;
+    font-size: 0.9rem;
+    /* letter-spacing: 1px;*/
+    margin: 0 0.1rem 0 0;
+    padding: 0.6rem;
+}
+
+button:hover {
+    background-color: #F94C66;
+    border: 1px solid #cc3e53;
+    border-radius: 0.3rem;
+    color: #FFFFFF;
+}
+
+input {
+    background: #FEFEFE;
+    border-radius: 0.3rem;
+    border: solid 1px #CCCCCC;
+    font: inherit;
+    padding: 0.5rem;
+    width: 25vw;
+}
+
+input:focus {
+    background: #F9FDFF;
+    border: solid 1px #1D5174;
+    outline: none;
+}
+
+/** specific styling for different forms **/
+.userDetails {
+   display: flex;
+   flex-direction: column;
+   margin: 1rem;
+   padding: 0 1rem;
+   text-align: left;
+}
+
+.userDetails input {
+   /* margin: 0.5rem 0 1rem;*/
+    width: 20vw;
+}
+
+.userDetails label {
+    color: #3AB0FF;
+    font-weight: 800;
+    margin: 0.5rem 0 0;
+    padding: 0.5rem 0rem;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 0 2rem;
+   /* text-align: center;*/
+}
+
+/*** table styling ***/
+table {
+    border: solid 1px #1D5174;
+    border-radius: 0.3rem;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    color: #3AB0FF;
+    font-weight: 800;
+    padding: 0.5rem 1rem;
+}
+
+td {
+    padding: 0.5rem 1rem;
+}
+
+.loginError {
+    color: #cc3e53;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 2rem 0;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+
+
 
 
 dt,
@@ -28,4 +253,71 @@ dt span {
 dd span {
     display: inline-block;
     margin-right: 5px;
+}
+
+
+/*** tablets ***/
+@media screen and (max-width: 992px) {
+    .container {
+        width: 100vw;
+
+    }
+
+
+
+
+
+    .main {
+        margin: 1rem;
+        height: auto;
+    }
+
+    .content {
+        margin: 5vh;
+    }
+
+
+    input, .userDetails input  {
+        width: 40vw;
+    }
+
+
+}
+
+/*** mobile ***/
+@media screen and (max-width: 450px) {
+
+    .container {
+        overflow: hidden;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+
+
+    main h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+
+    input, .userDetails input {
+        width: 60vw;
+    }
+
+    .footer-copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+
 }

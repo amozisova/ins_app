@@ -1,35 +1,36 @@
 {% extends "base.html" %}
 
-{% block title %}Insurance App - osobní údaje klienta{% endblock %}
-
-{% block body %}
-
-    <h1>Vaše osobní údaje</h1>
-{# přemýšlím, že by se to zde dalo podmínkou rozdělit, že když něco, tak se údaje zobrazí v tabulce a když dám "editovat", tak se zobrazí ve formuláři, který půjde odeslat do databáze metodou post #}
-<table>
-    <tr>Vaše osobní údaje</tr>
- 
-    {% for key, value in translated %}
-            <tr>
-                <td>{{ value }}:
-
-                    {% for value in userData.0|slice(key,1) %}
-                    <td>{{ value }}</td>{% endfor %}</td> 
-            </tr>
-
-
-
-    {% endfor %}
-
-    </table>
-
-    <p><a href="/Users/edit"><button>Změnit osobní údaje</button></a></p>
-
-
-    <div>
-        <p><a href="/Users/editLogin"><button>Změnit přihlašovací heslo</button></a></p>
-
-    </div>
-
+{% block title %}Insurance App - osobní údaje klienta
 {% endblock %}
 
+{% block body %}
+	<h1>Vaše osobní údaje</h1>
+
+	<table>
+		{# display content of nested array #}
+		<tr>
+			{% for key, value in translated %}
+				<th>{{ value }}:</th>
+
+				{% for value in userData.0|slice(key,1) %}
+					<td>{{ value }}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+
+	<p>
+		<a href="/Users/edit">
+			<button>Změnit osobní údaje</button>
+		</a>
+	</p>
+
+	<div>
+		<p>
+			<a href="/Users/editLogin">
+				<button>Změnit přihlašovací heslo</button>
+			</a>
+		</p>
+
+	</div>
+{% endblock %}

@@ -33,7 +33,7 @@ class Login extends \Core\Controller
     {
         $submittedData = new User;
         $user = $submittedData->checkLogin($_POST['email'], $_POST['password']);
-
+        $loginError='';
         if ($user) {
 
             session_regenerate_id(true);
@@ -45,9 +45,9 @@ class Login extends \Core\Controller
             $this->redirect('/');
             // View::renderTemplate('User/index.html', ['name' => $_POST['email'],]);
         } else {
+            $loginError='Chybné přihlašovací údaje. Zkuste to znovu.';
+            View::renderTemplate('Home/index.html', ['email' => $_POST['email'],'loginError' => $loginError]);
 
-            View::renderTemplate('Home/index.html', ['email' => $_POST['email'],]);
-            echo 'Chybné přihlašovací údaje. Zkuste to znovu.';
         }
     }
 

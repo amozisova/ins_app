@@ -1,26 +1,35 @@
 {% extends "base.html" %}
 
-{% block title %}Insurance App - pojištění klienta{% endblock %}
+{% block title %}Insurance App - pojištění klienta
+{% endblock %}
 
 {% block body %}
+	<header
+		class="title">
+		<!-- není nutné, styluju to přes main h1-->
+		<h1>Vaše pojistné smlouvy</h1>
+	</header>
 
-    <h1>Vaše pojistné smlouvy</h1>
-    <table>
-        
-        {# výpis multiarray #}
-            <tr>
-                {% for key, value in translated %}
-                    <td>{{value|e }}</td>
-                {% endfor %}
-            </tr>
-            
-            {% for row in userData %}
-            <tr>
-                    {% for cell in row %}
-                    <td> {{ cell|e }} </td>
-                {% endfor %}
-            
-            </tr>
-            {% endfor %}
-        </table>
+	<table>
+		{# display content of nested array #}
+		<thead>
+			<tr>
+				{% for key, value in translated %}
+					<th>{{value|e }}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for row in userData %}
+				<tr>
+					{% for cell in row %}
+						<td>
+							{{ cell|e }}
+						</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}

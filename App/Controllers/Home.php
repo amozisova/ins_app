@@ -18,7 +18,7 @@ class Home extends \Core\Controller
      */
     protected function before()
     {
-        echo "(before) ";
+        //echo "(before) ";
         //return false;
     }
 
@@ -29,7 +29,7 @@ class Home extends \Core\Controller
      */
     protected function after()
     {
-        echo " (after)";
+       // echo " (after)";
     }
 
     /**
