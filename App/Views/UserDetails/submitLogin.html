@@ -6,17 +6,15 @@
 
     <h1>Vaše přihlašovací údaje</h1>
 
-    <table>
-                
-            <tr>
+ 
                     {% for key in userData.status %}
-                    <td> {{ key|e }} </td>
+
+
+
+                    <div class="errorMessage"> {{ key|e }} </div>
                 {% endfor %}
-            
-            </tr>
-   
-        </table>
+
     
-    <p><a href="/Users/view">Zpět na přehled osobních údajů</a>
+                <p><a href="/Users/view">Zpět na přehled osobních údajů</a></p>
 
 {% endblock %}

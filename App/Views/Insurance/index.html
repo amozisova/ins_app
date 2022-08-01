@@ -10,12 +10,12 @@
 		<h1>Vaše pojistné smlouvy</h1>
 	</header>
 
-	<table>
-		{# display content of nested array #}
+	{# display content on screens down to 485px #}
+	<table class="table-bigscreen">
 		<thead>
 			<tr>
-				{% for key, value in translated %}
-					<th>{{value|e }}</th>
+				{% for value in translated %}
+					<th>{{ value }}</th>
 				{% endfor %}
 			</tr>
 		</thead>
@@ -25,13 +25,37 @@
 				<tr>
 					{% for cell in row %}
 						<td>
-							{{ cell|e }}
+							{{ cell }}
 						</td>
 					{% endfor %}
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-		{# TODO rozlišit různé statusy pojištění - dořešit JavaScriptem?#}
+	{# TODO rozlišit různé statusy pojištění - dořešit JavaScriptem?#}
+
+
+	{# display content on mobile screens up to 485px #}
+	<div class="table-mobile">
+		{% for row in userData %}
+
+			<table class="theading">
+				{% for value in translated %}
+					<tr>
+						<td>{{ value }}</td>
+					</tr>
+				{% endfor %}
+			</table>
+
+			<table class="tcontent">
+				{% for cell in row %}
+					<tr>
+						<td>{{ cell }}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		{% endfor %}
+
+	</div>
 
 {% endblock %}

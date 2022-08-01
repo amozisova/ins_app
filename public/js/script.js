@@ -1,14 +1,4 @@
 /*
-*** current link styling ***
-*/ 
-currentLinks = document.querySelectorAll('a[href="'+document.URL+'"]');
-    
-currentLinks.forEach(function(link) {
-        link.className += 'current-link';
-});
-    
-
-/*
 *** toggle navigation menu *** 
  */
 // Get toggle button and menu items div

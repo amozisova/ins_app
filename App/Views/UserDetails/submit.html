@@ -7,22 +7,25 @@
     <h1>Vaše osobní údaje</h1>
 
     {% if userData is empty %}
-    <p>Nebyla provedena žádná změna.</p>
+    <div class="errorMessage">Nebyla provedena žádná změna.</div>
 
     {% else %}
-    <p>Následující změny byly uloženy:</p>
+    <div class="errorMessage">Následující změny byly uloženy:</div>
 
+    <table class="editMessage">
+        <tr>
     {% for key, value in translated %}
-    <p> {{ value }}:
+    <td>{{ value }}:</td>
 
         {% for key, value in userData|slice(key,1) %}
        
-        {{ value }} {% endfor %}
-       </p>
-    {% endfor %}
+    <td> {{ value }} </td>    </tr>{% endfor %}
 
+  
+    {% endfor %}
+</table>
     {% endif %}
     
-    <p><a href="/Users/view">Zpět na přehled osobních údajů</a>
+    <p><a href="/Users/view">Zpět na přehled osobních údajů</a></p>
 
 {% endblock %}
