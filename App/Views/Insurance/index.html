@@ -10,30 +10,28 @@
 		<h1>Vaše pojistné smlouvy</h1>
 	</header>
 
-	<div class="table">
+	<table>
 		{# display content of nested array #}
-
-		<div class="table-head">
+		<thead>
+			<tr>
 				{% for key, value in translated %}
-					<span class="table-headings" data-th="{{value|e }}">{{value|e }}</span>
+					<th>{{value|e }}</th>
 				{% endfor %}
-		</div>
+			</tr>
+		</thead>
 
-
-		<div class="table-head">
+		<tbody>
 			{% for row in userData %}
-				
+				<tr>
 					{% for cell in row %}
-					<span class="table-rows"
-						<span class="table-cells">
+						<td>
 							{{ cell|e }}
-						</span>
-					</span>
+						</td>
 					{% endfor %}
-			
+				</tr>
 			{% endfor %}
-		</div>
-	</div>
+		</tbody>
+	</table>
 		{# TODO rozlišit různé statusy pojištění - dořešit JavaScriptem?#}
 
 {% endblock %}

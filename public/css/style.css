@@ -235,12 +235,12 @@ td {
     padding: 0.5rem 1rem;
 }
 
-
+/*
 .table {
     display: flex;
     
     /*display: grid;
-    grid-template-columns: repeat(5,1fr);*/
+    grid-template-columns: repeat(5,1fr);
     border: solid 1px #1D5174;
     border-radius: 0.3rem;
     margin: 1rem 0.5rem;
@@ -251,6 +251,8 @@ td {
 .table span {
     padding: 1rem;
 }
+*/
+
 
 .loginError {
     color: #cc3e53;
@@ -407,7 +409,7 @@ td:first-child {
     padding-bottom: .5em;
   }
 */
-
+/*
 .table {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -429,7 +431,7 @@ td:first-child {
 
     display: block;
   }
-
+*/
 
 
 
