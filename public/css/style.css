@@ -35,10 +35,17 @@ a {
     text-decoration: none;
 }
 
+a:active {
+    color: #f2f2f2;
+  }
+
 a:hover {
     color: #F94C66;
 }
 
+.current-link {
+    color:#FEFEFE;
+}
 
 .container {
     /*display: flex;*/
@@ -59,40 +66,51 @@ a:hover {
 /*** navigation ***/
 .navbar {
     background-color: #3AB0FF;
+    border-radius: 0.3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    list-style: none;
     padding: 0.5rem;
-
 }
 
-nav a {
-   /* background: #F94C66;
+.nav-icons {
+    display: none;
+}
+
+.nav-item a {
+    /* background: #F94C66;
     color: #f2f2f2;*/
     display: inline-block;
     padding: 0.5rem;
-    border-radius: 0.3rem;
-  }
+}
 
-nav a:hover {
-    background: #F94C66;
+.nav-item a:hover {
+    background-color: #F94C66;
     border-radius: 0.3rem;
     cursor: pointer;
     color: #f2f2f2;
-    padding: 0.5rem;
     transition: 0.2s;
-  }
+}
 
 .menu-items {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
     gap: 3rem;
     width: 60vw;
 }
+
+.toggle {
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
 
 /*** main section ***/
 main {
@@ -167,15 +185,15 @@ input:focus {
 
 /** specific styling for different forms **/
 .userDetails {
-   display: flex;
-   flex-direction: column;
-   margin: 1rem;
-   padding: 0 1rem;
-   text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0 1rem;
+    text-align: left;
 }
 
 .userDetails input {
-   /* margin: 0.5rem 0 1rem;*/
+    /* margin: 0.5rem 0 1rem;*/
     width: 20vw;
 }
 
@@ -193,7 +211,7 @@ input:focus {
     align-items: center;
     margin: 2rem 0;
     padding: 0 2rem;
-   /* text-align: center;*/
+    /* text-align: center;*/
 }
 
 /*** table styling ***/
@@ -203,6 +221,8 @@ table {
     margin: 1rem 0.5rem;
     padding: 0.5rem;
     text-align: left;
+    min-width: 300px; 
+
 }
 
 th {
@@ -213,6 +233,23 @@ th {
 
 td {
     padding: 0.5rem 1rem;
+}
+
+
+.table {
+    display: flex;
+    
+    /*display: grid;
+    grid-template-columns: repeat(5,1fr);*/
+    border: solid 1px #1D5174;
+    border-radius: 0.3rem;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
+    max-width:80vw;
+}
+
+.table span {
+    padding: 1rem;
 }
 
 .loginError {
@@ -263,9 +300,9 @@ dd span {
 
     }
 
-
-
-
+    .navbar {
+    border-radius: 0;
+    }
 
     .main {
         margin: 1rem;
@@ -277,7 +314,8 @@ dd span {
     }
 
 
-    input, .userDetails input  {
+    input,
+    .userDetails input {
         width: 40vw;
     }
 
@@ -290,13 +328,44 @@ dd span {
     .container {
         overflow: hidden;
     }
-/*TODO toggle menu*/
+
+    /*TODO toggle menu*/
+
+
+    /** navigation - toggle menu **/
     .navbar {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-      }
+    }
+
+    .notoggle {
+        display: none;
+    }
+
+
+    .nav-icons {
+        display: flex;
+        flex-direction: row;
+        gap: 0 2rem;
+    }
+
+    .toggle {
+        display: block;
+    }
+
+    .menu-items {
+        display: none;
+    }
+
+    .menu-items.responsive {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
 
 
 
@@ -307,7 +376,8 @@ dd span {
     }
 
 
-    input, .userDetails input {
+    input,
+    .userDetails input {
         width: 60vw;
     }
 
@@ -318,6 +388,50 @@ dd span {
         gap: 1rem;
         font-size: 0.8rem;
     }
+
+
+/* *** table *** */
+/*
+th {
+display:block;
+  }
+td {
+    display: block;
+  }
+
+td:first-child {
+    padding-top: .5em;
+  }
+
+  td:last-child {
+    padding-bottom: .5em;
+  }
+*/
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.table-head {
+    text-align: left;
+}
+
+
+.table-headings {
+    content: attr(data-th) "";
+}
+
+  .table-cells:before {
+    content: attr(data-th) "";
+    font-weight: bold;
+
+    display: block;
+  }
+
+
+
 
 
 }

@@ -1,15 +1,35 @@
 {% block nav %}
 	{% if session.user_id %}
-    <ul class="navbar">
-	<div class="menu-items">
-				<li><a href="/">Domů</a></li>
-			
-                <li><a href="/Insurances/view">Pojištění</a></li>
-				<li><a href="/Events/view">Pojistné události</a></li>
-				<li><a href="/Users/view">Osobní údaje</a></li>
-                </div>
-				<li><a href="/logout">Odhlásit se</a></li>
-            </ul>
+
+
+
+
+	<div class="navbar">
+		<div class="nav-icons">
+			<span class="home-icon">
+				<a class="nav-link" href="/"><img src="/img/home.png" alt="home icon"></a>
+			</span>
+			<span class="toggle">
+				<a id="toggle-icon">
+					<img src="/img/menu.png" alt="toggle menu icon">
+				</a>
+			</span>
+			<span class="home-icon">
+				<a class="nav-link" href="/logout"><img src="/img/logout.png" alt="logout icon"></a>
+			</span>
+		</div>
+
+		<span class="notoggle nav-item"><a href="/" class="nav-link">Domů</a></span>
+		<div class="menu-items">
+			<span class="nav-item"><a href="/Insurances/view" class="nav-link">Pojištění</a></span>
+			<span class="nav-item"><a href="/Events/view" class="nav-link">Pojistné události</a></span>
+			<span class="nav-item"><a href="/Users/view" class="nav-link">Osobní údaje</a></span>
+		</div>
+		<span class="notoggle nav-item"><a href="/logout" class="nav-link">Odhlásit se</a></span>
+	</div>
+
+
+		
 		{% else %}
 
 	{% endif %}
