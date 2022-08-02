@@ -7,14 +7,17 @@
     <h1>Zadejte nové heslo</h1>
 
     <form method="post" action="/Users/submitLogin" class="userDetails">
-                <label for="newpassword">Vaše nové heslo:</label>
+                
+        <label for="password">Stávající heslo:</label>
+                <input type="password" placeholder="zadejte své stávající heslo" name="password" id="password"></input>
+        
+        <label for="newpassword">Vaše nové heslo:</label>
                 <input type="password" placeholder="zadejte své nové heslo" name="newpassword" id="newpassword"></input>
 
                 <label for="newpassword_repeat">Potvrďte nové heslo:</label>
                 <input type="password" placeholder="znovu zadejte nové heslo" name="newpassword_repeat" id="newpassword_repeat"></input>
 
-                <label for="password">Potvrďte změnu zadáním stávajícího hesla:</label>
-                <input type="password" placeholder="zadejte své stávající heslo" name="password" id="password"></input>
+                
     
             <div class="submit">
                 <a href="/Users/view">Zpět</a>

@@ -10,10 +10,13 @@
 		<h1>Vítejte v aplikaci pro správu a evidenci pojištění</h1>
 	</header>
 
-
 	{% if session.user_id %}
-		<p>Vítejte,
-			{{ session.name }}!</p>
+<div class="home-icons">
+	<a href="/Insurances/view"><div class="icon card1"> </div></a>
+	<a href="/Events/view"><div class="icon card2"></div></a>
+	<a href="/Users/view"><div class="icon card3"></div></a>
+</div>
+
 	{% else %}
 		<h2>Pro přístup do aplikace se přihlaste zadáním přihlašovacích údajů do formuláře níže:</h2>
 		<form method="post" action="/login/login">

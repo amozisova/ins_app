@@ -12,3 +12,15 @@ function toggleNav() {
 
 // When toggle button pressed, run toggleNav function
 toggleBtn.addEventListener('click', toggleNav);
+
+
+/*
+*** icons hover ***
+*/
+
+//get icon images
+const icon=document.querySelectorAll('.home-card');
+
+function replaceImg() {
+  
+}
