@@ -28,7 +28,7 @@
 		<tbody>
 			{% for row in userData %}
 				<tr>
-					<td><a href="/Insurances/details?id={{ row.ins_number }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
+					<td><a href="/Insurances/details?id={{ row.ins_number }}" class="detail-button"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
 					</td>
 
 					{% for cell in row %}
@@ -37,6 +37,12 @@
 						</td>
 					{% endfor %}
 				</tr>
+
+<div id="details">
+
+</div>
+
+
 			{% endfor %}
 		</tbody>
 	</table>

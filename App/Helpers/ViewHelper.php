@@ -33,9 +33,11 @@ class ViewHelper
         'frequency' => 'frekvence splátky', 
         'pay_to' => 'platba na účet č.', 
         'pay_status' => 'stav platby',
+
+
     ];
 
-
+/* TODO dořešit nastavení překladače */ 
     /**
      * Display formatted names of database data in a view
      * Translate data passed from the controller to the view according to the $dictionary

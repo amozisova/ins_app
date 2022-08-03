@@ -14,14 +14,12 @@
 
 
 
-	{# display content on screens down to 485px #}
 
-	<div class="table-bigscreen">
-
-
+{# dořešit přiřezení třídy pro stylování #}
+		<div class="displayDetails table-mobile ">
 
 
-		{% for row in userData.details %}
+		{% for row in userData %}
 			<table class="theading">
 				{% for value in translated %}
 					<tr>
