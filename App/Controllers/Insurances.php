@@ -23,6 +23,19 @@ class Insurances extends \Core\Controller
         View::renderTemplate('Insurance/index.html', (array) $userData);
     }
 
+
+    public function detailsAction()
+    {
+        $userData = $this->showInsuranceData();
+        $details = $this->showInsuranceDetails();
+        //print_r($details);
+        // echo $userData[0]['email'];
+
+        View::renderTemplate('Insurance/details.html', ['userData' => $userData,'details' => $details]);
+    }
+
+
+
     /**
      * Function to call for insurance details of a user
      * Sends user ID and client data to User model
@@ -32,10 +45,34 @@ class Insurances extends \Core\Controller
     private function showInsuranceData()
     {
         $user = new User;
+
         $id = $_SESSION['user_id'];
-        $query = 'ins_number, ins_cat, startdate, enddate, ins_status';
         $tableName='insurances';
-        $userData = $user->getClientData($id, $tableName, $query);
+        $searchBy='client_id';
+        $query = 'ins_number, ins_cat, startdate, enddate, ins_status';
+     
+        $userData = $user->getClientData($id, $tableName, $searchBy, $query);
         return $userData;
     }
+
+
+
+    private function showInsuranceDetails()
+    {
+        $user = new User;
+
+        $id = $_GET['id'];
+        $tableName='payments';
+        $searchBy = 'ins_id';
+        $query = 'pay_ammount, pay_until, pay_via, frequency, pay_to, pay_status';
+    
+        $userData = $user->getClientData($id, $tableName, $searchBy, $query);
+        return $userData;
+    }
+	
+
 }
+
+
+    # TODO dořešit zobrazení dat z DB tabulky payments#
+ # TODO + překlady #

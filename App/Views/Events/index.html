@@ -13,6 +13,7 @@
 	<table class="table-bigscreen">
 		<thead>
 			<tr>
+				<th>detail události</th>
 				{% for value in translated %}
 					<th>{{ value }}</th>
 				{% endfor %}
@@ -22,6 +23,8 @@
 		<tbody>
 			{% for row in userData %}
 				<tr>
+					<td><a href="{{ row.event_num }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
+					</td>
 					{% for cell in row %}
 						<td>
 							{{ cell }}
@@ -46,6 +49,7 @@
 						<td>{{ value }}</td>
 					</tr>
 				{% endfor %}
+				<tr><td>detail události</td></tr>
 			</table>
 
 			<table class="tcontent">
@@ -54,6 +58,8 @@
 						<td>{{ cell }}</td>
 					</tr>
 				{% endfor %}
+				<tr><td><a href="{{ row.event_num }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
+				</td></tr>
 			</table>
 		{% endfor %}
 

@@ -19,7 +19,6 @@ p {
     margin: 1rem 0;
 }
 
-
 body {
     background-color: #fff;
     box-sizing: border-box;
@@ -273,8 +272,6 @@ input:focus {
 table {
     border: solid 1px #CCCCCC;
     border-radius: 0.3rem;
-    margin: 2rem 0.5rem;
-    padding: 0.5rem;
     text-align: left;
 }
 
@@ -288,14 +285,27 @@ td {
     padding: 0.5rem 1rem;
 }
 
+.table-bigscreen {
+    margin: 2rem 0.5rem;
+    padding: 0.5rem;
+}
+
 .table-mobile {
     display: none;
 }
 
+
+.search-icon {
+    height:auto;
+    width:1rem;
+}
+
+
+
 .editMessage {
 border: 1px solid #CCCCCC;
 border-radius: 0.3rem;
-margin: 0.5rem 0.5rem 3rem;
+margin: 0.5rem auto 3rem;
 }
 
 
@@ -315,35 +325,10 @@ margin: 0.5rem 0.5rem 3rem;
 }
 
 
-
-/*
-dt,
-dd {
-    text-align: left;
-    margin: 0;
-    padding: 0;
-}
-
-dt {
-    clear: both;
-    font-weight: bold
-}
-
-dt span {
-    display: inline-block;
-    width: 70px;
-}
-
-dd span {
-    display: inline-block;
-    margin-right: 5px;
-}
-*/
-
 /*** tablets ***/
 @media screen and (max-width: 992px) {
     .container {
-        width: 100vw;
+        width: 100%;
     }
 
     .navbar {
@@ -457,9 +442,10 @@ dd span {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: baseline;
-        justify-content: space-around;
-        margin: 1rem 0.3rem;
-        width: 90vw;
+        justify-content: center;
+        margin: 1rem 0.2rem;
+        padding:0.4rem;
+        width: 80vw;
         border: solid 1px #CCCCCC;
         border-radius: 0.3rem;
     }
@@ -469,9 +455,10 @@ dd span {
         display: flex;
         flex-direction: column;
         align-self: stretch;
-        width: 40vw;
+        width: 36vw;
         color: #3AB0FF;
         font-weight: 800;
+        margin: 0.6rem 0;
     }
 
     .tcontent {
@@ -479,12 +466,13 @@ dd span {
         display: flex;
         flex-direction: column;
         align-self: stretch;
-        width: 40vw;
+        margin: 0.6rem 0;
+        width: 36vw;
     }
 
     .table-mobile td {
-        height: 2.5rem;
-        padding: 0.5rem;
+        height: 2.4rem;
+        padding: 0;
         text-align: left;
     }
 

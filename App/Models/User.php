@@ -68,12 +68,13 @@ class User extends \Core\Model
      *
      * @param int $id  ID number of client
      * @param string $tableName  DB table name
+     * @param string $searchBy DB table column name
      * @param string $query  DB table rows to be fetched
      * @return void
      */
-    private function fetchClientData($id, $tableName, $query = '*')
+    private function fetchClientData($id, $tableName, $searchBy, $query = '*')
     {
-        $sql = 'SELECT ' . $query . ' FROM '.$tableName. ' WHERE client_id = :id';
+        $sql = 'SELECT ' . $query . ' FROM '.$tableName. ' WHERE '.$searchBy. ' = :id';
         
         $db = static::getDB();
         $stmt = $db->prepare($sql);
@@ -107,9 +108,9 @@ class User extends \Core\Model
      * @param string $query  DB table rows to be fetched
      * @return void
      */
-    public function getClientData($id, $tableName, $query = '*')
+    public function getClientData($id, $tableName, $searchBy='client_id', $query = '*')
     {
-        $userData = $this->fetchClientData($id, $tableName, $query);
+        $userData = $this->fetchClientData($id, $tableName, $searchBy, $query);
 
         return $userData;
     }
@@ -163,9 +164,9 @@ class User extends \Core\Model
     }
 
 
-    public function setClientPassword($id, $tableName, $query, $enteredPswd, $newPswd)
+    public function setClientPassword($id, $tableName, $searchBy, $query, $enteredPswd, $newPswd)
     {
-        $verified = $this->verifyPassword($id, $tableName, $query, $enteredPswd);
+        $verified = $this->verifyPassword($id, $tableName, $searchBy, $query, $enteredPswd);
 
         if($verified==='Heslo bylo ověřeno') {
 
@@ -198,9 +199,9 @@ class User extends \Core\Model
         return $passwordCheck;
     }
 */
-private function verifyPassword($id, $tableName, $query, $enteredPswd) {
+private function verifyPassword($id, $tableName, $searchBy, $query, $enteredPswd) {
     
-    $passwordHash=$this->fetchClientData($id, $tableName, $query);
+    $passwordHash=$this->fetchClientData($id, $tableName, $searchBy, $query);
 
     $hash=$passwordHash[0]['password_hash'];
 

@@ -57,10 +57,13 @@ class Users extends \Core\Controller
     private function showClientData()
     {
         $user = new User;
+     
         $id = $_SESSION['user_id'];
-        $query = 'name, surname, street, city, zipcode, email, phone';
         $tableName = 'clients';
-        $userData = $user->getClientData($id, $tableName, $query);
+        $searchBy='client_id';
+        $query = 'name, surname, street, city, zipcode, email, phone';
+      
+        $userData = $user->getClientData($id, $tableName, $searchBy, $query);
         return $userData;
     }
 
@@ -102,10 +105,11 @@ class Users extends \Core\Controller
     private function showLoginData()
     {
         $user = new User;
+        $searchBy='client_id';
         $id = $_SESSION['user_id'];
         $query = 'email, password_hash';
         $tableName = 'clients';
-        $userData = $user->getClientData($id, $tableName, $query);
+        $userData = $user->getClientData($id, $tableName, $searchBy, $query);
         return $userData;
     }
 
@@ -180,10 +184,11 @@ class Users extends \Core\Controller
         $user = new User;
         $id = $_SESSION['user_id'];
         $tableName = 'clients';
+        $searchBy = 'client_id';
         $query = 'password_hash';
         $enteredPswd = $dataCheck['password'];
         $newPswd = $dataCheck['newpassword'];
-        $passwordUpdate = $user->setClientPassword($id, $tableName, $query, $enteredPswd, $newPswd);
+        $passwordUpdate = $user->setClientPassword($id, $tableName, $searchBy, $query, $enteredPswd, $newPswd);
         return (array) $passwordUpdate; //set type array to display update status in the view
     }
 }

@@ -32,10 +32,13 @@ class Events extends \Core\Controller
   private function showEventsData()
   {
       $user = new User;
+   
       $id = $_SESSION['user_id'];
+      $tableName='event_details';
+      $searchBy='client_id';
       $query = 'event_num, ins_cat, ins_number, event_date,	status';
-      $tableName='ins_details';
-      $userData = $user->getClientData($id, $tableName, $query);
+    
+      $userData = $user->getClientData($id, $tableName, $searchBy, $query);
       return $userData;
   }
 

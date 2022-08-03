@@ -41,6 +41,10 @@ class View
     public static function renderTemplate(string $template, array $args = [])
     {
         static $twig = null;
+        print "<pre>";
+        print_r($args);
+print "</pre>";
+      
 
         if ($twig === null) {
             $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/App/Views');

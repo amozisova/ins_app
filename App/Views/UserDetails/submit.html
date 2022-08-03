@@ -1,31 +1,42 @@
 {% extends "base.html" %}
 
-{% block title %}Insurance App - osobní údaje klienta{% endblock %}
+{% block title %}Insurance App - osobní údaje klienta
+{% endblock %}
 
 {% block body %}
 
-    <h1>Vaše osobní údaje</h1>
+	<h1>Vaše osobní údaje</h1>
 
-    {% if userData is empty %}
-    <div class="errorMessage">Nebyla provedena žádná změna.</div>
+	{% if userData is empty %}
+		<div class="errorMessage">
+            Nebyla provedena žádná změna.
+        </div>
 
-    {% else %}
-    <div class="errorMessage">Následující změny byly uloženy:</div>
+	{% else %}
+		<div class="errorMessage">
+            Následující změny byly uloženy:
+        </div>
 
-    <table class="editMessage">
-        <tr>
-    {% for key, value in translated %}
-    <td>{{ value }}:</td>
+			<table class="editMessage">
+				<tr>
+					{% for key, value in translated %}
+						<td>{{ value }}:</td>
 
-        {% for key, value in userData|slice(key,1) %}
-       
-    <td> {{ value }} </td>    </tr>{% endfor %}
+						{% for key, value in userData|slice(key,1) %}
 
-  
-    {% endfor %}
-</table>
-    {% endif %}
-    
-    <p><a href="/Users/view">Zpět na přehled osobních údajů</a></p>
+							<td>
+								{{ value }}
+							</td>
+						</tr>
+					{% endfor %}
+
+
+				{% endfor %}
+			</table>
+		{% endif %}
+
+	<p>
+		<a href="/Users/view">Zpět na přehled osobních údajů</a>
+	</p>
 
 {% endblock %}

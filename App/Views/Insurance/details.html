@@ -7,7 +7,7 @@
 	<header
 		class="title">
 		<!-- není nutné, styluju to přes main h1-->
-		<h1>Vaše pojistné smlouvy</h1>
+		<h1>Detaily vaší pojistné smlouvy</h1>
 	</header>
 
 	{# TODO add  insurance details #}
@@ -16,42 +16,12 @@
 
 	{# display content on screens down to 485px #}
 
-	<table class="table-bigscreen">
-		<thead>
-			<tr>
-				<th>detail smlouvy</th>
-				{% for value in translated %}
-					<th>{{ value }}</th>
-				{% endfor %}
-			</tr>
-		</thead>
-		<tbody>
-			{% for row in userData %}
-				<tr>
-					<td><a href="/Insurances/details?id={{ row.ins_number }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
-					</td>
-
-					{% for cell in row %}
-						<td>
-							{{ cell }}
-						</td>
-					{% endfor %}
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-
-
-
-	{# TODO rozlišit různé statusy pojištění - dořešit JavaScriptem?#}
+	<div class="table-bigscreen">
 
 
 
 
-	{# display content on mobile screens up to 485px #}
-	<div class="table-mobile">
-
-		{% for row in userData %}
+		{% for row in userData.details %}
 			<table class="theading">
 				{% for value in translated %}
 					<tr>

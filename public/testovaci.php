@@ -1,5 +1,5 @@
 <?php
-
+namespace Foo;
 
 /*
 Array
@@ -98,3 +98,51 @@ function multipleToSingle(array $multiArray)
 print_r(multipleToSingle($array));
 
 print("<pre>".print_r(multipleToSingle($array),true)."</pre>");
+
+
+
+
+echo '"', __NAMESPACE__, '"';
+
+
+function foo() {
+    return [0, 1, 2];
+ }
+
+ foo();
+
+ $a = 16;
+ 
+echo $a << 2;
+
+$var = true ? 1 : (false ? 2 : 3);
+echo $var;
+
+$foo = 11 + 011;
+ 
+echo $foo;
+
+$a = [
+    'a',
+    3 => 'b',
+    1 => 'c',
+    'd'
+ ];
+
+ print_r($a);
+
+ $beers = "beer";
+
+ echo "Let's drink some $beers";
+
+ class Foo {
+    static $variable = 'static property';
+  
+    static function variable() {
+       echo '1';
+    }
+ }
+  
+ echo Foo::$variable; 
+ $variable = "variable";
+ Foo::$variable();

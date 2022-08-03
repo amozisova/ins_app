@@ -15,12 +15,14 @@ toggleBtn.addEventListener('click', toggleNav);
 
 
 /*
-*** icons hover ***
+*** scrollbars width calculation ***
 */
 
-//get icon images
-const icon=document.querySelectorAll('.home-card');
-
-function replaceImg() {
-  
+function getScrollbarWidth(elm) {
+  if (elm === document.body) {
+    return window.innerWidth - document.documentElement.clientWidth;
+  } else {
+    return elm.offsetWidth - elm.clientWidth;
+  }
 }
+

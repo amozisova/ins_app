@@ -26,6 +26,13 @@ class ViewHelper
         'event_num' => 'číslo pojistné události',
         'event_date' => 'datum vzniku',
         'status' => 'stav',
+
+        'pay_ammount' => 'pojistné', 
+        'pay_until' => 'zaplaceno do' , 
+        'pay_via' => 'způsob platby', 
+        'frequency' => 'frekvence splátky', 
+        'pay_to' => 'platba na účet č.', 
+        'pay_status' => 'stav platby',
     ];
 
 
