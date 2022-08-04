@@ -37,59 +37,58 @@ class ViewHelper
 
     ];
 
-/* TODO dořešit nastavení překladače */ 
     /**
-     * Display formatted names of database data in a view
      * Translate data passed from the controller to the view according to the $dictionary
+     * Get column names of database data in a view
+     * Return translated values
      *
      * @param array $userData data passed to View from Controller
      * @return array
      */
     public function translate($userData)
     {
-        $singleArray = $this->multipleToSingle($userData);
-        $userData = $this->getKeys($singleArray);
+        $dataColumns = $this->getColumnNames($userData);
+    
 
         $translated = [];
 
-        foreach ($userData as $word) {
+        foreach ($dataColumns as $word) {
             $wordFromDictionary = strtr($word, $this->dictionary);
             array_push($translated, $wordFromDictionary);
         }
         return $translated;
     }
 
-    /**
-     * Extract keys from array and turn them into values
-     *
-     * @param array $singleArray 
-     * @return array 
-     */
-    private function getKeys(array $singleArray)
-    {
-        return array_keys($singleArray);
-    }
+
 
     /**
-     * Remove multiple nesting of array data
-     * Iterrates over multidimensional array to remove several layers of nesting
+     * Get column names from array of user data and turn them into a single array of unique values
+     * Check for multiple nesting of array data
+     * Iterrate over multidimensional array to remove several layers of nesting and join values into a single array
+     * Remove duplicate values
      *
-     * @param array $array
-     * @return array
+     * @param array $userData
+     * @return array $simpleArray
      */
-    private function multipleToSingle(array $multiArray)
+    private function getColumnNames(array $userData)
     {
-        $simpleArray = [];
+            $simpleArray = []; 
+     
+            if (!is_array($userData)) { 
+              return $userData; 
+            } 
+    
+            foreach ($userData as $key => $value) { 
+              
+                if (!is_array($value)) { 
+                $key = array_push($simpleArray, $key);
+                
+                } else {
+                $simpleArray = array_merge($simpleArray, $this->getColumnNames($value)); 
 
-        foreach ($multiArray as $item) {
+                }
+            } 
 
-            if (is_array($item)) {
-
-                $simpleArray =  array_merge_recursive($item);
-            } else {
-                return $multiArray;
-            }
-        }
-        return $simpleArray;
+            return array_unique($simpleArray); 
     }
 }

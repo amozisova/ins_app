@@ -18,30 +18,23 @@ class Insurances extends \Core\Controller
   */
     public function viewAction()
     {
-        $userData = $this->showInsuranceData();
+        $data = $this->showInsuranceData();
 
-        View::renderTemplate('Insurance/index.html', (array) $userData);
+        View::renderTemplate('Insurance/index.html', (array) $data);
     }
 
-
+ /**
+  * Display the user's insurance details page
+  *
+  * @return void
+  */
     public function detailsAction()
     {
+        $insuranceInfo = $this->showInsuranceData();
+        $insDetails = $this->showInsuranceDetails();
     
-        $details = $this->showInsuranceDetails();
-        //print_r($details);
-        // echo $userData[0]['email'];
-
-        /* TODO dořešit předání základních dat o pojištění + detailů 
-        * možnosti: 
-        *   řešit v databázi pohledem => vytvořit pohled a ten volat
-        *   volat showInsuranceData a showInsuranceDetails => pak je třeba dořešit transaltor
-        *   nějak uchovat obsah userData se základními daty o pojištění a k tomu zavolat showInsuranceDetails
-        *   asi nejlepší volat více funkcí najednou, pro další rozšiřování - např. když budu chtít dodat další data o pojistce
-        */
-        
-        View::renderTemplate('Insurance/details.html', (array) $details);
+        View::renderTemplate('Insurance/details.html', ['insuranceInfo' =>$insuranceInfo, 'insuranceDetails'=> $insDetails, 'id'=> $_GET['id']]);
     }
-
 
 
     /**

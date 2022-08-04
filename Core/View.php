@@ -41,10 +41,6 @@ class View
     public static function renderTemplate(string $template, array $args = [])
     {
         static $twig = null;
-        print "<pre>";
-        print_r($args);
-print "</pre>";
-      
 
         if ($twig === null) {
             $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/App/Views');
@@ -53,7 +49,7 @@ print "</pre>";
         }
 
         // check if arguments were passed from controller
-        // formate passed arguments
+        // translate passed arguments
         if (!empty($args)) {
             $translated = self::formatArguments($args);
             $args = ['userData' => $args, 'translated' => $translated];
@@ -61,6 +57,19 @@ print "</pre>";
        
         //renders View
         echo $twig->render($template, $args);
+
+
+        print "<pre>";
+        print_r($template);
+        print "</pre>";
+
+        print "<pre>";
+        print_r($args);
+        print "</pre>";
+
+
+
+
     }
 
     /**
