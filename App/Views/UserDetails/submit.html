@@ -5,7 +5,9 @@
 
 {% block body %}
 
-	<h1>Vaše osobní údaje</h1>
+	<header>
+		<h1>Vaše osobní údaje</h1>
+	</header>
 
 	{% if userData is empty %}
 		<div class="errorMessage">
@@ -19,21 +21,16 @@
 
 			<table class="editMessage">
 				<tr>
-					{% for key, value in translated %}
+					{% for key, value in dataLabel %}
 						<td>{{ value }}:</td>
 
 						{% for key, value in userData|slice(key,1) %}
-
-							<td>
-								{{ value }}
-							</td>
-						</tr>
+							<td>{{ value }}</td>
+							</tr>
+						{% endfor %}
 					{% endfor %}
-
-
-				{% endfor %}
 			</table>
-		{% endif %}
+	{% endif %}
 
 	<p>
 		<a href="/Users/view">Zpět na přehled osobních údajů</a>

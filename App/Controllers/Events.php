@@ -20,7 +20,7 @@ class Events extends \Core\Controller
   {
       $userData = $this->showEventsData();
 
-      View::renderTemplate('Events/index.html', (array) $userData);
+      View::renderTemplate('Events/index.html', ['eventsData'=> $userData]);
   }
 
   /**

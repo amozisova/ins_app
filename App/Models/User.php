@@ -9,24 +9,6 @@ use PDO;
  */
 class User extends \Core\Model
 {
-    /**
-     * Error messages
-     * @var array
-     */
-    //public $errors = []; // v řešenní !!!
-
-    /**
-     * Class constructor
-     * @param array $data  Initial property values (optional)
-     * @return void
-     */
-    /*
-    public function __construct($data = [])
-    {
-        foreach ($data as $key => $value) {
-            $this->$key = $value;
-        };
-    }*/
 
     /**
      * Find a user model by email address
@@ -74,8 +56,8 @@ class User extends \Core\Model
      */
     private function fetchClientData($id, $tableName, $searchBy, $query = '*')
     {
-        $sql = 'SELECT ' . $query . ' FROM '.$tableName. ' WHERE '.$searchBy. ' = :id';
-        
+        $sql = 'SELECT ' . $query . ' FROM ' . $tableName . ' WHERE ' . $searchBy . ' = :id';
+
         $db = static::getDB();
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -85,19 +67,6 @@ class User extends \Core\Model
         return $userData;
     }
 
-    /*
-    private function DBData($sqlOperation, $query = '*', $DBtable, $condition)
-    {
-        $sql = $sqlOperation . $query . ' FROM '.$DBtable. ' WHERE '.$condition;
-               
-        $db = static::getDB();
-        $stmt = $db->prepare($sql);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
-        $stmt->execute();
-        $userData = $stmt->fetch();
-        return $userData;
-    }
-    */
 
     /**
      * Returns data from database to be viewed
@@ -108,7 +77,7 @@ class User extends \Core\Model
      * @param string $query  DB table rows to be fetched
      * @return void
      */
-    public function getClientData($id, $tableName, $searchBy='client_id', $query = '*')
+    public function getClientData($id, $tableName, $searchBy = 'client_id', $query = '*')
     {
         $userData = $this->fetchClientData($id, $tableName, $searchBy, $query);
 
@@ -125,7 +94,7 @@ class User extends \Core\Model
      */
     private function updateClientData($id, $tableName, $sqlQuery)
     {
-        $sql = 'UPDATE '.$tableName.' SET ' . $sqlQuery . ' WHERE client_id = :id';
+        $sql = 'UPDATE ' . $tableName . ' SET ' . $sqlQuery . ' WHERE client_id = :id';
         $db = static::getDB();
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -164,63 +133,86 @@ class User extends \Core\Model
     }
 
 
+    
+    /**
+     * Sends client data to the database to update password
+     * calls verifyPassword function
+     *
+     * @param int $id user id from current session
+     * @param string $tableName name of the database table
+     * @param string $searchBy database column name for SQL query
+     * @param string $query $sqlQuery
+     * @param string $enteredPswd value entered by client as a password to be evaluated
+     * @param string $newPswd new password entered by user
+     * @return string Message of verification status - error or success
+     */
     public function setClientPassword($id, $tableName, $searchBy, $query, $enteredPswd, $newPswd)
     {
         $verified = $this->verifyPassword($id, $tableName, $searchBy, $query, $enteredPswd);
 
-        if($verified==='Heslo bylo ověřeno') {
+        if ($verified === 'Heslo bylo ověřeno') {
 
             $this->updateClientPassword($id, $tableName, $newPswd);
 
-            return $verified='Heslo bylo úspěšně změněno.';
+            return $verified = 'Heslo bylo úspěšně změněno.';
+        }
+        else {
 
-        } else {
+            $errorMsg = 'Původní heslo bylo zadáno chybně.';
 
-        $errorMsg='Původní heslo bylo zadáno chybně.';
-
-        return $errorMsg;
-
+            return $errorMsg;
         }
     }
 
-    private function updateClientPassword($id, $tableName,$newPswd) {
+
+    /**
+     * Connects to the database and updates client's password
+     *
+     * @param int $id user id from current session
+     * @param string $tableName name of the database table
+     * @param string $newPswd new password entered by user
+     * @return void
+     */
+    private function updateClientPassword($id, $tableName, $newPswd)
+    {
         $pswd = password_hash($newPswd, PASSWORD_DEFAULT);
 
-        $qlQuery='password_hash='. '\''.$pswd.'\'';
-        
+        $qlQuery = 'password_hash=' . '\'' . $pswd . '\'';
+
         $this->updateClientData($id, $tableName, $qlQuery);
     }
 
-/*
-    public function getClientPassword($id, $tableName, $query, $enteredPswd)
+
+    /**
+     * Connects to the database and verifies client's password
+     *
+     * @param int $id user id from current session
+     * @param string $tableName name of the database table
+     * @param string $searchBy database column name for SQL query
+     * @param string $query $sqlQuery
+     * @param string $enteredPswd value entered by client as a password to be evaluated
+     * @return string Message of verification status - error or success
+     */
+    private function verifyPassword($id, $tableName, $searchBy, $query, $enteredPswd)
     {
-        $passwordCheck = $this->verifyPassword($id, $tableName, $query, $enteredPswd);
 
-        return $passwordCheck;
-    }
-*/
-private function verifyPassword($id, $tableName, $searchBy, $query, $enteredPswd) {
-    
-    $passwordHash=$this->fetchClientData($id, $tableName, $searchBy, $query);
+        $passwordHash = $this->fetchClientData($id, $tableName, $searchBy, $query);
 
-    $hash=$passwordHash[0]['password_hash'];
+        $hash = $passwordHash[0]['password_hash'];
 
-    if ($hash) {
-        if (password_verify($enteredPswd, $hash)) {
-            $verified='Heslo bylo ověřeno';
-            return $verified;
-        } else {
-            $errorMsg='Heslo je chybně zadáno';
+        if ($hash) {
+            if (password_verify($enteredPswd, $hash)) {
+                $verified = 'Heslo bylo ověřeno';
+                return $verified;
+            }
+            else {
+                $errorMsg = 'Heslo je chybně zadáno';
+                return $errorMsg;
+            }
+        }
+        else {
+            $errorMsg = ('Heslo nebylo možné ověřit');
             return $errorMsg;
         }
-    } else {
-        $errorMsg=('Heslo nebylo možné ověřit');
-        return $errorMsg;
     }
-
-}
-
-    /**private function getPassword($userData) {
- $hashedPassword=$userData['password_hash'];
- $getPassword }**/
 }

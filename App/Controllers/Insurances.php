@@ -18,9 +18,9 @@ class Insurances extends \Core\Controller
   */
     public function viewAction()
     {
-        $data = $this->showInsuranceData();
+        $insuranceData = $this->showInsuranceData();
 
-        View::renderTemplate('Insurance/index.html', (array) $data);
+        View::renderTemplate('Insurance/index.html', ['insurancesData'=> $insuranceData]);
     }
 
  /**

@@ -5,17 +5,16 @@
 
 {% block body %}
 
+<header>
+	<h1>Vítejte v aplikaci pro správu a evidenci pojištění</h1>
+</header>
 
-	<header class="title">
-		<h1>Vítejte v aplikaci pro správu a evidenci pojištění</h1>
-	</header>
-
-	{% if session.user_id %}
-<div class="home-icons">
-	<a href="/Insurances/view"><div class="icon card1"> </div></a>
-	<a href="/Events/view"><div class="icon card2"></div></a>
-	<a href="/Users/view"><div class="icon card3"></div></a>
-</div>
+{% if session.user_id %}
+	<nav class="home-icons">
+		<a href="/Insurances/view"><div class="icon card1"></div></a>
+		<a href="/Events/view"><div class="icon card2"></div></a>
+		<a href="/Users/view"><div class="icon card3"></div></a>
+	</nav>
 
 	{% else %}
 		<h2>Pro přístup do aplikace se přihlaste zadáním přihlašovacích údajů do formuláře níže:</h2>
@@ -31,10 +30,8 @@
 			</p>
 		</form>
 
-		<div class="errorMessage">
-		{{userData.loginError}}
-		</div>
+		<div class="errorMessage">{{userData.loginError}}</div>
 
-	{% endif %}
+{% endif %}
 
 {% endblock %}

@@ -18,9 +18,9 @@ class Users extends \Core\Controller
      */
     public function viewAction()
     {
-        $userData = $this->showClientData();
+        $contactData = $this->showClientData();
 
-        View::renderTemplate('UserDetails/index.html', (array) $userData);
+        View::renderTemplate('UserDetails/index.html', ['contactData' => $contactData]);
     }
 
     /**
@@ -30,9 +30,9 @@ class Users extends \Core\Controller
      */
     public function editAction()
     {
-        $userData = $this->showClientData();
+        $contactData = $this->showClientData();
 
-        View::renderTemplate('UserDetails/edit.html', (array) $userData);
+        View::renderTemplate('UserDetails/edit.html', ['contactData' => $contactData]);
     }
 
     /**

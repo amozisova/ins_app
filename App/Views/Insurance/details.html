@@ -4,22 +4,19 @@
 {% endblock %}
 
 {% block body %}
-	<header
-		class="title">
-		<!-- není nutné, styluju to přes main h1-->
+	<header>
 		<h1>Detaily vaší pojistné smlouvy</h1>
 	</header>
 
-		<div
-		class="displayDetails table-mobile "> 
-		{# display column names #}
+		<div class="displayDetails table-mobile"> 
+		
+			{# display column names #}
 		{% for row in userData.insuranceDetails %}
-
 			<table class="theading">
 				<tr>
-					{% for value in translated %}
+					{% for value in dataLabel %}
 					
-					{# exclude IF from displaying #}
+					{# exclude column name "ID" from displaying #}
 						{% if value != 'id' %}
 							<td>{{ value }}</td>
 						</tr>
@@ -51,9 +48,6 @@
 		{% endfor %}
 	</div>
 
-
-	<p>
-		<a href="/Insurances/view">Zpět na přehled pojištění</a>
-	</p>
+	<p><a href="/Insurances/view">Zpět na přehled pojištění</a></p>
 
 {% endblock %}

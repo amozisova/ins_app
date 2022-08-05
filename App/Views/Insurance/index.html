@@ -4,26 +4,22 @@
 {% endblock %}
 
 {% block body %}
-	<header
-		class="title">
-		<!-- není nutné, styluju to přes main h1-->
+	<header>
 		<h1>Vaše pojistné smlouvy</h1>
 	</header>
 
-
 	{# display content on screens down to 485px #}
-
 	<table class="table-bigscreen">
 		<thead>
 			<tr>
 				<th>detail smlouvy</th>
-				{% for value in translated %}
+				{% for value in dataLabel %}
 					<th>{{ value }}</th>
 				{% endfor %}
 			</tr>
 		</thead>
 		<tbody>
-			{% for row in userData %}
+			{% for row in userData.insurancesData %}
 				<tr>
 					<td><a href="/Insurances/details?id={{ row.ins_number }}" class="detail-button"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
 					</td>
@@ -35,28 +31,16 @@
 					{% endfor %}
 				</tr>
 
-<div id="details">
-
-</div>
-
-
 			{% endfor %}
 		</tbody>
 	</table>
 
-
-
-	{# TODO rozlišit různé statusy pojištění - dořešit JavaScriptem?#}
-
-
-
-
 	{# display content on mobile screens up to 485px #}
 	<div class="table-mobile">
 
-		{% for row in userData %}
+		{% for row in userData.insurancesData %}
 			<table class="theading">
-				{% for value in translated %}
+				{% for value in dataLabel %}
 					<tr>
 						<td>{{ value }}</td>
 					</tr>

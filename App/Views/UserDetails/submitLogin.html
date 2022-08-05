@@ -4,17 +4,14 @@
 
 {% block body %}
 
-    <h1>Vaše přihlašovací údaje</h1>
-
+    <header>
+        <h1>Vaše přihlašovací údaje</h1>
+    </header>
  
-                    {% for key in userData.status %}
+    {% for key in userData.status %}
+        <div class="errorMessage"> {{ key|e }} </div>
+    {% endfor %}
 
-
-
-                    <div class="errorMessage"> {{ key|e }} </div>
-                {% endfor %}
-
-    
-                <p><a href="/Users/view">Zpět na přehled osobních údajů</a></p>
+    <p><a href="/Users/view">Zpět na přehled osobních údajů</a></p>
 
 {% endblock %}

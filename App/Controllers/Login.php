@@ -43,7 +43,7 @@ class Login extends \Core\Controller
             $_SESSION['surname'] = $user->surname;
 
             $this->redirect('/');
-            // View::renderTemplate('User/index.html', ['name' => $_POST['email'],]);
+     
         } else {
             $loginError='Chybné přihlašovací údaje. Zkuste to znovu.';
             View::renderTemplate('Home/index.html', ['email' => $_POST['email'],'loginError' => $loginError]);

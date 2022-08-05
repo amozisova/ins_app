@@ -25,22 +25,3 @@ function getScrollbarWidth(elm) {
     return elm.offsetWidth - elm.clientWidth;
   }
 }
-
-
-
-/*
-*** toggle table details *** 
- */
-// Get toggle button and menu items div 
-/*
-const detailBtn = document.querySelector('.detail-button');
-const detailDiv = document.getElementById('details');
-
-function toggleDetails() {
-  detailDiv.style.display = 'block';
-}
-
-// When toggle button pressed, run toggleNav function
-detailBtn.addEventListener('click', toggleDetails);
-
-*/

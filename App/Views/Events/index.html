@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Insurance App - pojistné události klienta
-{% endblock %}
+{% block title %}Insurance App - pojistné události klienta{% endblock %}
 
 {% block body %}
-
-	<h1>Vaše pojistné události</h1>
-	
+	<header>
+		<h1>Vaše pojistné události</h1>
+	</header>
 	{# TODO add event details #}
 	{#TODO analogicky k insurance doplnit funkce na zobrazení detailů#}
 
@@ -15,14 +14,14 @@
 		<thead>
 			<tr>
 				<th>detail události</th>
-				{% for value in translated %}
+				{% for value in dataLabel %}
 					<th>{{ value }}</th>
 				{% endfor %}
 			</tr>
 		</thead>
 
 		<tbody>
-			{% for row in userData %}
+			{% for row in userData.eventsData %}	
 				<tr>
 					<td><a href="{{ row.event_num }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
 					</td>
@@ -42,10 +41,10 @@
 
 	{# display content on mobile screens up to 485px #}
 	<div class="table-mobile">
-		{% for row in userData %}
+		{% for row in eventsData %}
 
 			<table class="theading">
-				{% for value in translated %}
+				{% for value in dataLabel %}
 					<tr>
 						<td>{{ value }}</td>
 					</tr>

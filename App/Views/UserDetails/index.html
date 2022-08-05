@@ -4,33 +4,42 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Vaše osobní údaje</h1>
+	<header>
+		<h1>Vaše osobní údaje</h1>
+	</header>
 
-	<table class="table-bigscreen">
-		{# display content of nested array #}
-		<tr>
-			{% for key, value in translated %}
-				<th>{{ value }}:</th>
+	<div class="displayDetails table-mobile"> 
+	
+		{% for row in userData.contactData %}		
+		
+			<table class="theading">
+				<tr>
+					{% for value in dataLabel %}
+						<td>{{ value }}</td>
+				</tr>
+					{% endfor %}
+			</table>
+			{% endfor %}
 
-				{% for value in userData.0|slice(key,1) %}
-					<td>{{ value }}</td>
+			{% for row in userData.contactData %}
+				<table class="tcontent"> 
+				{% for cell in row %}
+				<tr>
+					<td>{{ cell }}</td>
+				</tr>
 				{% endfor %}
-			</tr>
-		{% endfor %}
-	</table>
+			</table>
+			{% endfor %}
+	</div>
 
 	<p>
-		<a href="/Users/edit">
-			<button>Změnit osobní údaje</button>
-		</a>
+		<a href="/Users/edit"><button>Změnit osobní údaje</button></a>
 	</p>
 
 	<div>
 		<p>
-			<a href="/Users/editLogin">
-				<button>Změnit přihlašovací heslo</button>
+			<a href="/Users/editLogin"><button>Změnit přihlašovací heslo</button>
 			</a>
 		</p>
-
 	</div>
 {% endblock %}
