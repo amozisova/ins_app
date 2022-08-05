@@ -71,9 +71,4 @@ class Insurances extends \Core\Controller
         return $userData;
     }
 	
-
 }
-
-
-    # TODO dořešit zobrazení dat z DB tabulky payments#
- # TODO + překlady #

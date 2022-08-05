@@ -43,5 +43,5 @@ class Events extends \Core\Controller
   }
 
 
-
+#TODO analogicky k insurance doplnit funkce na zobrazení detailů#
 }

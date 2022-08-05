@@ -49,7 +49,6 @@ class ViewHelper
     {
         $dataColumns = $this->getColumnNames($userData);
     
-
         $translated = [];
 
         foreach ($dataColumns as $word) {
@@ -58,7 +57,6 @@ class ViewHelper
         }
         return $translated;
     }
-
 
 
     /**
