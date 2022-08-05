@@ -1,0 +1,113 @@
+[18-Jun-2022 15:35:33 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:06:56 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('User/index.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:07:06 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('User/index.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:07:28 Europe/Berlin] Uncaught exception: 'Exception' with message 'Controller class App\Controllers\User not found'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('User/index')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 127
+[18-Jun-2022 19:12:33 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/home/login')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:14:14 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/home/login')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:14:27 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('User/')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:16:10 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('User/')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:21:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('User/index.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:30:41 Europe/Berlin] Uncaught exception: 'ParseError' with message 'Unclosed '{' on line 14'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('D:\\Dropbox\\#pro...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(114): class_exists('App\\Controllers...')
+#3 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('')
+#4 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php' on line 109
+[18-Jun-2022 19:30:44 Europe/Berlin] Uncaught exception: 'ParseError' with message 'Unclosed '{' on line 14'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('D:\\Dropbox\\#pro...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(114): class_exists('App\\Controllers...')
+#3 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('')
+#4 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php' on line 109
+[18-Jun-2022 19:30:47 Europe/Berlin] Uncaught exception: 'ParseError' with message 'Unclosed '{' on line 14'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('D:\\Dropbox\\#pro...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(114): class_exists('App\\Controllers...')
+#3 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('')
+#4 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php' on line 109
+[18-Jun-2022 19:32:45 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php(59): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 59)
+#1 [internal function]: App\Controllers\Home->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(47): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Home.php' on line 59
+[18-Jun-2022 19:33:07 Europe/Berlin] Uncaught exception: 'Exception' with message 'Controller class App\Controllers\User not found'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('user/index')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 127
+[18-Jun-2022 19:33:20 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('user/index.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:38:44 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(35): Core\Router->dispatch('home/home/login')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 19:59:28 Europe/Berlin] Uncaught exception: 'Exception' with message 'Controller class App\Controllers\Signup not found'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(39): Core\Router->dispatch('signup/new')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 127
+[18-Jun-2022 20:04:46 Europe/Berlin] Uncaught exception: 'Exception' with message 'Controller class App\Controllers\Signup not found'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(39): Core\Router->dispatch('signup/new')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 127
+[18-Jun-2022 20:12:28 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(39): Core\Router->dispatch('new')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 20:14:05 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(39): Core\Router->dispatch('new')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 20:14:16 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(39): Core\Router->dispatch('new')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 20:19:46 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(39): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 20:24:55 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('new.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 20:25:03 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('new.html')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[18-Jun-2022 20:25:13 Europe/Berlin] Uncaught exception: 'Exception' with message 'Controller class App\Controllers\Signup not found'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('signup/new')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 127

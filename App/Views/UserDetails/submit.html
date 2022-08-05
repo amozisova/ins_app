@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - osobní údaje klienta
+{% endblock %}
+
+{% block body %}
+
+	<header>
+		<h1>Vaše osobní údaje</h1>
+	</header>
+
+	{% if userData is empty %}
+		<div class="errorMessage">
+            Nebyla provedena žádná změna.
+        </div>
+
+	{% else %}
+		<div class="errorMessage">
+            Následující změny byly uloženy:
+        </div>
+
+			<table class="editMessage">
+				<tr>
+					{% for key, value in dataLabel %}
+						<td>{{ value }}:</td>
+
+						{% for key, value in userData|slice(key,1) %}
+							<td>{{ value }}</td>
+							</tr>
+						{% endfor %}
+					{% endfor %}
+			</table>
+	{% endif %}
+
+	<p>
+		<a href="/Users/view">Zpět na přehled osobních údajů</a>
+	</p>
+
+{% endblock %}

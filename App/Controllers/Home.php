@@ -10,28 +10,6 @@ use \Core\View;
 
 class Home extends \Core\Controller
 {
-
-    /**
-     * Before filter
-     *
-     * @return void
-     */
-    protected function before()
-    {
-        echo "(before) ";
-        //return false;
-    }
-
-    /**
-     * After filter
-     *
-     * @return void
-     */
-    protected function after()
-    {
-        echo " (after)";
-    }
-
     /**
      * Show the index page
      *
@@ -39,8 +17,6 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('Home/index.html', [
-            'name' => 'Dave', 'colours' => ['red', 'green', 'blue']
-        ]);
+        View::renderTemplate('Home/index.html');
     }
 }

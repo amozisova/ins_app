@@ -1,22 +1,37 @@
 {% extends "base.html" %}
 
-{% block title %}Insurance App - homepage{% endblock %}
+{% block title %}Insurance App - homepage
+{% endblock %}
 
 {% block body %}
 
-<h1>Vítejte v aplikaci pro správu pojištění!</h1>
-<p>Pro přístup do aplikace se přihlašte zadáním přihlašovacích údajů do formuláře níže:</p>
+<header>
+	<h1>Vítejte v aplikaci pro správu a evidenci pojištění</h1>
+</header>
 
-<form method="post" action="">
-    <label for="userlogin">Vaše emailová adresa:</label>
-    <input type="email" name="userlogin" id="userlogin">
-    <p>
-        <label for="userpswd">Vaše heslo:</label>
-        <input type="password" name="userpswd" id="userpswd">
-    </p>
-    <p>
-        <button type="submit">Přihlásit se</button>
-    </p>
-</form>
+{% if session.user_id %}
+	<nav class="home-icons">
+		<a href="/Insurances/view"><div class="icon card1"></div></a>
+		<a href="/Events/view"><div class="icon card2"></div></a>
+		<a href="/Users/view"><div class="icon card3"></div></a>
+	</nav>
+
+	{% else %}
+		<h2>Pro přístup do aplikace se přihlaste zadáním přihlašovacích údajů do formuláře níže:</h2>
+		<form method="post" action="/login/login">
+			<label for="email">E-mail:</label>
+			<input type="email" name="email" id="email" placeholder="váš e-mail" required autofocus value="{{ email }}">
+			<p>
+				<label for="password">Heslo:</label>
+				<input type="password" name="password" id="password" placeholder="vaše heslo" required>
+			</p>
+			<p>
+				<button type="submit">přihlásit se</button>
+			</p>
+		</form>
+
+		<div class="errorMessage">{{userData.loginError}}</div>
+
+{% endif %}
 
 {% endblock %}

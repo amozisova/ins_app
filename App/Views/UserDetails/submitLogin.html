@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - přihlašovací údaje klienta{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1>Vaše přihlašovací údaje</h1>
+    </header>
+ 
+    {% for key in userData.status %}
+        <div class="errorMessage"> {{ key|e }} </div>
+    {% endfor %}
+
+    <p><a href="/Users/view">Zpět na přehled osobních údajů</a></p>
+
+{% endblock %}

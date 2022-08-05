@@ -1,0 +1,529 @@
+/*** default browser style reset***/
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+blockquote,
+ul,
+dl,
+dd {
+    margin: 0;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+body {
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Public Sans', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* links */
+a {
+    color: #1D5174;
+    text-decoration: none;
+}
+
+a:active {
+    color: #f2f2f2;
+}
+
+a:hover {
+    color: #F94C66;
+}
+
+.current-link {
+    color: #FEFEFE;
+}
+
+.container {
+    /*display: flex;*/
+    background-color: #FEFEFE;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 80vw;
+
+    /*padding: 1rem 0 2rem;*/
+}
+
+
+.logo {
+    padding: 1rem 2rem;
+    width: 20vh;
+}
+
+/*** navigation ***/
+.navbar {
+    background-color: #3AB0FF;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+
+.nav-icons {
+    display: none;
+}
+
+.nav-item a {
+    /* background: #F94C66;
+    color: #f2f2f2;*/
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.nav-item a:hover {
+    background-color: #F94C66;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: #f2f2f2;
+    transition: 0.2s;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 3rem;
+    width: 60vw;
+}
+
+.toggle {
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* homepage icons */
+.home-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem;
+    max-width: 60vw;
+}
+
+.card1 {
+    background: url('/img/icons/contract.png');
+}
+
+.card1:hover {
+    background: url('/img/icons/contract-wh.png');
+
+}
+
+.card2 {
+    background: url('/img/icons/event.png');
+}
+
+.card2:hover {
+    background: url('/img/icons/event-wh.png');
+
+}
+
+.card3 {
+    background: url('/img/icons/contact.png');
+}
+
+.card3:hover {
+    background: url('/img/icons/contact-wh.png');
+
+}
+
+.icon {
+    background-color: #3AB0FF;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    border-radius: 0.3rem;
+    height: 10vw;
+    width: 10vw;
+    padding: 1rem;
+}
+
+.icon:hover {
+background-color: #F94C66;
+background-position: center;
+background-repeat: no-repeat;
+background-size: 80%;
+cursor: pointer;
+transition: 0.2s;
+}
+
+
+/*** main section ***/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    text-align: center;
+    min-height: 60vh;
+}
+
+.content {
+    margin: 10vh;
+}
+
+main h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+main h2 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin: 2vh 0;
+}
+
+/*** form styling ***/
+form {
+    margin: 3rem 2rem;
+    text-align: center;
+}
+
+label {
+    font-weight: 600;
+    padding: 0 0.5rem 0 0;
+}
+
+button {
+    border: 1px solid #FEFEFE;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #3AB0FF;
+    color: #ffffff;
+    font-size: 0.9rem;
+    /* letter-spacing: 1px;*/
+    margin: 0 0.1rem 0 0;
+    padding: 0.6rem;
+}
+
+button:hover {
+    background-color: #F94C66;
+    border: 1px solid #cc3e53;
+    border-radius: 0.3rem;
+    color: #FFFFFF;
+}
+
+input {
+    background: #FEFEFE;
+    border-radius: 0.3rem;
+    border: solid 1px #CCCCCC;
+    font: inherit;
+    padding: 0.5rem;
+    width: 25vw;
+}
+
+input:focus {
+    background: #F9FDFF;
+    border: solid 1px #1D5174;
+    outline: none;
+}
+
+/** specific styling for different forms **/
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.userDetails input {
+    /* margin: 0.5rem 0 1rem;*/
+    width: 20vw;
+}
+
+.userDetails label {
+    color: #3AB0FF;
+    font-weight: 800;
+    margin: 0.5rem 0 0;
+    padding: 0.5rem 0rem;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 0 2rem;
+    /* text-align: center;*/
+}
+
+/*** table styling ***/
+table {
+    border: solid 1px #CCCCCC;
+    border-radius: 0.3rem;
+    text-align: left;
+}
+
+th {
+    color: #3AB0FF;
+    font-weight: 800;
+    padding: 0.5rem 1rem;
+}
+
+td {
+    padding: 0.5rem 1rem;
+}
+
+.table-bigscreen {
+    margin: 2rem 0.5rem;
+    padding: 0.5rem;
+}
+
+.table-mobile {
+    display: none;
+}
+
+.displayDetails  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    margin: 2rem 0;
+   /* width: 50vw;*/
+    border: solid 1px #CCCCCC;
+    border-radius: 0.3rem;
+}
+
+.theading {
+    border: none;
+    color: #3AB0FF;
+    font-weight: 800;
+}
+
+.tcontent {
+    border: none;
+}
+
+
+
+.search-icon {
+    height:auto;
+    width:1rem;
+}
+
+/*
+#details {
+    /*display:none;
+    border:1px solid #3AB0FF;
+    width:60vw;
+}
+*/
+
+
+.editMessage {
+border: 1px solid #CCCCCC;
+border-radius: 0.3rem;
+margin: 0.5rem auto 3rem;
+}
+
+
+.errorMessage {
+    color: #cc3e53;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 3rem 0;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+
+
+/*** tablets ***/
+@media screen and (max-width: 992px) {
+    .container {
+        width: 100%;
+    }
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .main {
+        margin: 1rem;
+        height: auto;
+    }
+
+    .content {
+        margin: 5vh;
+    }
+
+    input,
+    .userDetails input {
+        width: 40vw;
+    }
+
+
+}
+
+/*** mobile ***/
+@media screen and (max-width: 485px) {
+
+    .body {
+        overflow-x: hidden;
+    }
+
+
+    /** navigation - toggle menu **/
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .notoggle {
+        display: none;
+    }
+
+
+    .nav-icons {
+        display: flex;
+        flex-direction: row;
+        gap: 0 2rem;
+    }
+
+    .toggle {
+        display: block;
+    }
+
+    .menu-items {
+        display: none;
+    }
+
+    .menu-items.responsive {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* homepage icons */
+
+    .home-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       /* margin: 3rem 0.5rem;*/
+    }
+    
+
+
+
+    main h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    input,
+    .userDetails input {
+        width: 60vw;
+    }
+
+    .footer-copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    main {
+        margin: 2rem 0rem;
+    }
+
+
+    /* *** table *** */
+
+    .table-bigscreen {
+        display: none;
+    }
+
+    .table-mobile {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        margin: 1rem 0.2rem;
+        padding:0.4rem;
+        width: 80vw;
+        border: solid 1px #CCCCCC;
+        border-radius: 0.3rem;
+    }
+
+    .table-mobile td {
+        height: 2.4rem;
+        padding: 0;
+        text-align: left;
+    }
+
+    .theading {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        width: 36vw;
+        color: #3AB0FF;
+        font-weight: 800;
+        margin: 0.6rem 0;
+    }
+    
+    .tcontent {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        margin: 0.6rem 0;
+        width: 36vw;
+    }
+
+    /* table 
+
+    table {
+        font-size: 0.8rem;
+        margin: 1rem 0;
+        padding: 0;
+    }
+
+    th {
+        color: #3AB0FF;
+        font-weight: 800;
+        padding: 0.2rem;
+    }
+
+    td {
+        padding: 0.3rem;
+    }
+*/
+
+
+}

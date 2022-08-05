@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="icon" href="data:,">
-</head>
-<body>
-    <nav>
-        <a href="/">Homepage</a> |
-        <a href="/posts/index">Posts</a>
-    </nav>
+	<head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% block title %}{% endblock %}</title>
+		{% block stylesheets %}
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+			<link rel="stylesheet" href="/css/style.css">
+		{% endblock %}
+			<link rel="icon" href="/img/favicon.png">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div>
+					<img src="/img/logo.png" class="logo">
+				</div>
+				<nav>
+					{% block nav %}
+						{{ include('nav.html') }}
+					{% endblock %}
+				</nav>
+			</header>
+			<main>
+                <section class="content">
+				{% block body %}{% endblock %}
+                </section>
+			</main>
 
-    {% block body %}
-    {% endblock %}
-</body>
+			<footer class="footer-copyright">
+				<div>
+					© InsApp 2022
+				</div>
+				<div>
+					Autorka:
+					<a href="https://www.mozisa.eu" target="_blank">Alžběta Možíšová</a>
+				</div>
+			</footer>
+		</div>
+
+    <script src="/js/script.js"></script>
+	</body>
 </html>

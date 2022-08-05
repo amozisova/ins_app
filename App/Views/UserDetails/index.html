@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - osobní údaje klienta
+{% endblock %}
+
+{% block body %}
+	<header>
+		<h1>Vaše osobní údaje</h1>
+	</header>
+
+	<div class="displayDetails table-mobile"> 
+	
+		{% for row in userData.contactData %}		
+		
+			<table class="theading">
+				<tr>
+					{% for value in dataLabel %}
+						<td>{{ value }}</td>
+				</tr>
+					{% endfor %}
+			</table>
+			{% endfor %}
+
+			{% for row in userData.contactData %}
+				<table class="tcontent"> 
+				{% for cell in row %}
+				<tr>
+					<td>{{ cell }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+			{% endfor %}
+	</div>
+
+	<p>
+		<a href="/Users/edit"><button>Změnit osobní údaje</button></a>
+	</p>
+
+	<div>
+		<p>
+			<a href="/Users/editLogin"><button>Změnit přihlašovací heslo</button>
+			</a>
+		</p>
+	</div>
+{% endblock %}

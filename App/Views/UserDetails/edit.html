@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - osobní údaje klienta{% endblock %}
+
+{% block body %}
+
+    <header>
+	    <h1>Vaše osobní údaje</h1>
+    </header>
+	
+    <form method="post" action="/Users/submit" class="userDetails">
+
+		{% for key, value in dataLabel %}
+			<label for {{ value }}>{{ value }}</label>
+			
+            {% for key, value in userData.contactData.0|slice(key,1) %}
+				<input placeholder="{{ value }}" name="{{ key }}" id="{{ key }}"></input>
+		    {% endfor %}
+
+	    {% endfor %}
+
+        <div class="submit">
+            <a href="/Users/view">Zpět</a>
+            <button type="submit" value="Uložit změny">Uložit změny</button>
+        </div>
+
+    </form>
+{% endblock %}

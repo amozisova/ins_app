@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - pojištění klienta
+{% endblock %}
+
+{% block body %}
+	<header>
+		<h1>Vaše pojistné smlouvy</h1>
+	</header>
+
+	{# display content on screens down to 485px #}
+	<table class="table-bigscreen">
+		<thead>
+			<tr>
+				<th>detail smlouvy</th>
+				{% for value in dataLabel %}
+					<th>{{ value }}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in userData.insurancesData %}
+				<tr>
+					<td><a href="/Insurances/details?id={{ row.ins_number }}" class="detail-button"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
+					</td>
+
+					{% for cell in row %}
+						<td>
+							{{ cell }}
+						</td>
+					{% endfor %}
+				</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+
+	{# display content on mobile screens up to 485px #}
+	<div class="table-mobile">
+
+		{% for row in userData.insurancesData %}
+			<table class="theading">
+				{% for value in dataLabel %}
+					<tr>
+						<td>{{ value }}</td>
+					</tr>
+				{% endfor %}
+				<tr><td>detail smlouvy</td></tr>
+			</table>
+
+			<table class="tcontent">
+				{% for cell in row %}
+					<tr>
+						<td>{{ cell }}</td>
+					</tr>
+				{% endfor %}
+				<tr><td><a href="{{ row.ins_number }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
+				</tr></td>
+			</table>
+		{% endfor %}
+	</div>
+
+{% endblock %}

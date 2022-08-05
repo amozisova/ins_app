@@ -1,11 +1,15 @@
 {
     "require": {
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "symfony/asset": "^6.1"
     },
     "autoload": {
         "psr-4": {
              "Core\\": "Core/",
              "App\\": "App/"
         }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.1"
     }
 }

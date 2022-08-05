@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Insurance App - pojištění klienta
+{% endblock %}
+
+{% block body %}
+	<header>
+		<h1>Detaily vaší pojistné smlouvy</h1>
+	</header>
+
+		<div class="displayDetails table-mobile"> 
+		
+			{# display column names #}
+		{% for row in userData.insuranceDetails %}
+			<table class="theading">
+				<tr>
+					{% for value in dataLabel %}
+					
+					{# exclude column name "ID" from displaying #}
+						{% if value != 'id' %}
+							<td>{{ value }}</td>
+						</tr>
+					{% endif %}
+				{% endfor %}
+			</table>
+		{% endfor %}
+
+		{% for row in userData.insuranceInfo %}
+
+			{# display values only for selected insurance contract ID #}
+				{% if row.ins_number == userData.id %}
+
+					<table class="tcontent"> {% for cell in row %}
+						<tr>
+							<td>{{ cell }}</td>
+						</tr>
+					{% endfor %}
+
+					{% for row in userData.insuranceDetails %}
+						{% for cell in row %}
+							<tr>
+								<td>{{ cell }}</td>
+							</tr>
+						{% endfor %}
+					{% endfor %}
+				</table>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+	<p><a href="/Insurances/view">Zpět na přehled pojištění</a></p>
+
+{% endblock %}

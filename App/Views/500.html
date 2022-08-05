@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Error occured{% endblock %}
+{% block title %}Došlo k chybě{% endblock %}
 
 {% block body %}
 
-<h1>An error occured.</h1>
-<p>We are sorry for the inconvenience.</p>
-<p>Please return to the <a href="/">homepage</a>.</p>
+<h1>Došlo k chybě.</h1>
+<div class="errorMessage">
+<p>Omlouváme se za nepříjemnosti</p>
+<p>Vraťtse se prosím na <a href="/">domovskou stránku</a>.</p>
+</div>
 
 {% endblock %}
