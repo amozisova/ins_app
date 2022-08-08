@@ -1,0 +1,180 @@
+[08-Aug-2022 21:04:34 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php' on line 130
+[08-Aug-2022 21:04:34 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:34 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:34 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:34 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:04:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
+[08-Aug-2022 21:08:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined array key "email"'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): Core\Error::errorHandler(2, 'Undefined array...', 'D:\\Dropbox\\#pro...', 35)
+#1 [internal function]: App\Controllers\Login->loginAction()
+#2 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#3 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#4 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#5 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php' on line 35
