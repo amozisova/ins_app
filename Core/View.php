@@ -37,16 +37,6 @@ class View
        
         //renders View
         echo $twig->render($template, $args);
-
-
-        print "<pre>";
-        print_r($template);
-        print "</pre>";
-
-        print "<pre>";
-        print_r($args);
-        print "</pre>";
-
     }
 
     /**
