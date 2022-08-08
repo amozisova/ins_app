@@ -12,7 +12,7 @@
 	
 		{% for row in userData.contactData %}		
 		
-			<table class="theading">
+			<table class="dataLabels">
 				<tr>
 					{% for value in dataLabel %}
 						<td>{{ value }}</td>
@@ -22,7 +22,7 @@
 			{% endfor %}
 
 			{% for row in userData.contactData %}
-				<table class="tcontent"> 
+				<table class="dataContent"> 
 				{% for cell in row %}
 				<tr>
 					<td>{{ cell }}</td>

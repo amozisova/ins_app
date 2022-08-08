@@ -12,7 +12,7 @@
 		
 			{# display column names #}
 		{% for row in userData.insuranceDetails %}
-			<table class="theading">
+			<table class="dataLabels">
 				<tr>
 					{% for value in dataLabel %}
 					
@@ -30,7 +30,7 @@
 			{# display values only for selected insurance contract ID #}
 				{% if row.ins_number == userData.id %}
 
-					<table class="tcontent"> {% for cell in row %}
+					<table class="dataContent"> {% for cell in row %}
 						<tr>
 							<td>{{ cell }}</td>
 						</tr>

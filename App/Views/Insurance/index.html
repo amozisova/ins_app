@@ -8,7 +8,7 @@
 		<h1>Vaše pojistné smlouvy</h1>
 	</header>
 
-	{# display content on screens down to 485px #}
+	{# display content on screens down to 500px #}
 	<table class="table-bigscreen">
 		<thead>
 			<tr>
@@ -21,7 +21,7 @@
 		<tbody>
 			{% for row in userData.insurancesData %}
 				<tr>
-					<td><a href="/Insurances/details?id={{ row.ins_number }}" class="detail-button"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
+					<td><a href="/Insurances/details?id={{ row.ins_number }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
 					</td>
 
 					{% for cell in row %}
@@ -35,11 +35,11 @@
 		</tbody>
 	</table>
 
-	{# display content on mobile screens up to 485px #}
+	{# display content on mobile screens up to 500px #}
 	<div class="table-mobile">
 
 		{% for row in userData.insurancesData %}
-			<table class="theading">
+			<table class="dataLabels">
 				{% for value in dataLabel %}
 					<tr>
 						<td>{{ value }}</td>
@@ -48,13 +48,13 @@
 				<tr><td>detail smlouvy</td></tr>
 			</table>
 
-			<table class="tcontent">
+			<table class="dataContent">
 				{% for cell in row %}
 					<tr>
 						<td>{{ cell }}</td>
 					</tr>
 				{% endfor %}
-				<tr><td><a href="{{ row.ins_number }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
+				<tr><td><a href="/Insurances/details?id={{ row.ins_number }}"><img src="/img/icons/search.png" alt="search icon" class="search-icon">zobrazit</a>
 				</tr></td>
 			</table>
 		{% endfor %}
