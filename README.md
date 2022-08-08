@@ -13,7 +13,7 @@ Admin interface will be added with the next update.
 #### You can view the website on the following [Site Link](https://www.mozisa.eu/).
 
 ### Screenshot
-https://github.com/amozisova/portfolio/blob/main/img/projects/portfolio.png
+https://github.com/amozisova/portfolio/blob/main/img/projects/insapp.png
 
 ### Built with
 - PHP, MySQL, HTML5
