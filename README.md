@@ -11,7 +11,7 @@ Current version contains a login form and a basic user interface from a client p
 Admin interface will be added with the next update.
 
 
-#### You can view the website on the following [Site Link](https://www.mozisa.eu/).
+#### You can view the website on the following [Site Link](https://insapp.mozisa.eu/).
 
 
 ### Screenshot
