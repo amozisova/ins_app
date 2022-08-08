@@ -18,7 +18,7 @@
 
 	{% else %}
 		<h2>Pro přístup do aplikace se přihlaste zadáním přihlašovacích údajů do formuláře níže:</h2>
-		<form method="post" action="/login/login">
+		<form method="post" action="/login/login" class="loginForm">
 			<label for="email">E-mail:</label>
 			<input type="email" name="email" id="email" placeholder="váš e-mail" required autofocus value="{{ email }}">
 			<p>

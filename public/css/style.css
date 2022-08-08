@@ -24,7 +24,6 @@ body {
     box-sizing: border-box;
     border: 0;
     font-family: 'Public Sans', sans-serif;
-    margin: 0 auto;
     padding: 0;
 }
 
@@ -34,29 +33,19 @@ a {
     text-decoration: none;
 }
 
-a:active {
-    color: #f2f2f2;
-}
-
 a:hover {
     color: #F94C66;
 }
 
-.current-link {
-    color: #FEFEFE;
-}
-
+/* content wrapper */
 .container {
-    /*display: flex;*/
     background-color: #FEFEFE;
     margin: 0 auto;
     min-height: 100vh;
     width: 80vw;
-
-    /*padding: 1rem 0 2rem;*/
 }
 
-
+/* logo image */
 .logo {
     padding: 1rem 2rem;
     width: 20vh;
@@ -73,15 +62,26 @@ a:hover {
     padding: 0.5rem;
 }
 
+/* icons for mobile navigation */
 .nav-icons {
     display: none;
 }
 
+/* container for app pages links */
+.menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 60vw;
+}
+
+/* navigation links */
 .nav-item a {
-    /* background: #F94C66;
-    color: #f2f2f2;*/
     display: inline-block;
     padding: 0.5rem;
+    text-align: center;
 }
 
 .nav-item a:hover {
@@ -92,23 +92,7 @@ a:hover {
     transition: 0.2s;
 }
 
-.menu-items {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    gap: 3rem;
-    width: 60vw;
-}
-
-.toggle {
-    color: white;
-    cursor: pointer;
-    display: none;
-}
-
-
-/* homepage icons */
+/*** homepage cards container ***/
 .home-icons {
     display: flex;
     flex-direction: row;
@@ -118,13 +102,13 @@ a:hover {
     max-width: 60vw;
 }
 
+/* card background images*/
 .card1 {
     background: url('/img/icons/contract.png');
 }
 
 .card1:hover {
     background: url('/img/icons/contract-wh.png');
-
 }
 
 .card2 {
@@ -133,7 +117,6 @@ a:hover {
 
 .card2:hover {
     background: url('/img/icons/event-wh.png');
-
 }
 
 .card3 {
@@ -142,9 +125,9 @@ a:hover {
 
 .card3:hover {
     background: url('/img/icons/contact-wh.png');
-
 }
 
+/* cards */
 .icon {
     background-color: #3AB0FF;
     background-position: center;
@@ -180,93 +163,19 @@ main {
     margin: 10vh;
 }
 
+/* section title */
 main h1 {
     font-size: 2rem;
     font-weight: bold;
 }
 
+/* section info */
 main h2 {
     font-size: 1.1rem;
     font-weight: 300;
     margin: 2vh 0;
 }
 
-/*** form styling ***/
-form {
-    margin: 3rem 2rem;
-    text-align: center;
-}
-
-label {
-    font-weight: 600;
-    padding: 0 0.5rem 0 0;
-}
-
-button {
-    border: 1px solid #FEFEFE;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: 0.3s;
-    background-color: #3AB0FF;
-    color: #ffffff;
-    font-size: 0.9rem;
-    /* letter-spacing: 1px;*/
-    margin: 0 0.1rem 0 0;
-    padding: 0.6rem;
-}
-
-button:hover {
-    background-color: #F94C66;
-    border: 1px solid #cc3e53;
-    border-radius: 0.3rem;
-    color: #FFFFFF;
-}
-
-input {
-    background: #FEFEFE;
-    border-radius: 0.3rem;
-    border: solid 1px #CCCCCC;
-    font: inherit;
-    padding: 0.5rem;
-    width: 25vw;
-}
-
-input:focus {
-    background: #F9FDFF;
-    border: solid 1px #1D5174;
-    outline: none;
-}
-
-/** specific styling for different forms **/
-.userDetails {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    padding: 0 1rem;
-    text-align: left;
-}
-
-.userDetails input {
-    /* margin: 0.5rem 0 1rem;*/
-    width: 20vw;
-}
-
-.userDetails label {
-    color: #3AB0FF;
-    font-weight: 800;
-    margin: 0.5rem 0 0;
-    padding: 0.5rem 0rem;
-}
-
-.submit {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 2rem 0;
-    padding: 0 2rem;
-    /* text-align: center;*/
-}
 
 /*** table styling ***/
 table {
@@ -285,16 +194,19 @@ td {
     padding: 0.5rem 1rem;
 }
 
+/* table container for desktop and tablet */
 .table-bigscreen {
     margin: 2rem 0.5rem;
     padding: 0.5rem;
 }
 
+/* table container for mobile */
 .table-mobile {
     display: none;
 }
 
-.displayDetails  {
+/* flex container for details table */
+.displayDetails {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -306,39 +218,113 @@ td {
     border-radius: 0.3rem;
 }
 
-.theading {
+/* table with data labels */
+.dataLabels {
     border: none;
     color: #3AB0FF;
     font-weight: 800;
+    text-align: right;
 }
 
-.tcontent {
+/* table with data content */
+.dataContent {
     border: none;
 }
 
-
-
+/* search icon image */
 .search-icon {
     height:auto;
     width:1rem;
 }
 
-/*
-#details {
-    /*display:none;
-    border:1px solid #3AB0FF;
-    width:60vw;
+
+/*** form styling ***/
+label {
+    font-weight: 600;
 }
-*/
+
+input {
+    background: #FEFEFE;
+    border-radius: 0.3rem;
+    border: solid 1px #CCCCCC;
+    font: inherit;
+    padding: 0.5rem;
+}
+
+input:focus {
+    background: #F9FDFF;
+    border: solid 1px #1D5174;
+    outline: none;
+}
+
+button {
+    border: 1px solid #FEFEFE;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #3AB0FF;
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 0 0.1rem 0 0;
+    padding: 0.6rem;
+}
+
+button:hover {
+    background-color: #F94C66;
+    border: 1px solid #cc3e53;
+    border-radius: 0.3rem;
+    color: #FFFFFF;
+}
+
+/** styling for specific forms **/
+.loginForm {
+    margin: 3rem 2rem;
+}
+
+.loginForm input {
+    width: 25vw;
+}
+
+.loginForm label {
+    padding: 0 0.5rem 0 0;
+}
+
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    text-align: left;
+}
+
+.userDetails input {
+    width: 20vw;
+}
+
+.userDetails label {
+    color: #3AB0FF;
+    font-weight: 800;
+    margin: 0.5rem 0 0;
+    padding: 0.3rem 0rem;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 0 2rem;
+}
 
 
+/* edited data table */
 .editMessage {
 border: 1px solid #CCCCCC;
 border-radius: 0.3rem;
 margin: 0.5rem auto 3rem;
 }
 
-
+/* error text */
 .errorMessage {
     color: #cc3e53;
     font-size: 1.1rem;
@@ -346,6 +332,7 @@ margin: 0.5rem auto 3rem;
     margin: 3rem 0;
 }
 
+/* footer */
 .footer-copyright {
     display: flex;
     flex-direction: row;
@@ -355,42 +342,43 @@ margin: 0.5rem auto 3rem;
 }
 
 
+/*** 
+responsive behaviour 
+***/
+
 /*** tablets ***/
 @media screen and (max-width: 992px) {
+/** content wrapper **/
     .container {
         width: 100%;
     }
 
+/** navigation **/
     .navbar {
         border-radius: 0;
     }
 
+/** main section **/
     .main {
         margin: 1rem;
         height: auto;
     }
 
-    .content {
-        margin: 5vh;
-    }
-
-    input,
-    .userDetails input {
+/** forms **/
+    .loginForm input, .userDetails input {
         width: 40vw;
     }
-
 
 }
 
 /*** mobile ***/
-@media screen and (max-width: 485px) {
+@media screen and (max-width: 500px) {
 
     .body {
         overflow-x: hidden;
     }
 
-
-    /** navigation - toggle menu **/
+/** navigation - toggle menu **/
     .navbar {
         display: flex;
         flex-direction: column;
@@ -398,25 +386,30 @@ margin: 0.5rem auto 3rem;
         justify-content: center;
     }
 
-    .notoggle {
-        display: none;
-    }
-
-
+    /* icons for mobile navigation */
     .nav-icons {
         display: flex;
         flex-direction: row;
         gap: 0 2rem;
     }
 
+    /* toggle icon */
     .toggle {
         display: block;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* nav links visible on bigger devices*/
+    .notoggle {
+        display: none;
     }
 
     .menu-items {
         display: none;
     }
 
+    /* nav links in toggle menu*/
     .menu-items.responsive {
         display: flex;
         flex-direction: column;
@@ -425,29 +418,33 @@ margin: 0.5rem auto 3rem;
         justify-content: center;
     }
 
-    /* homepage icons */
-
+/** homepage cards container **/
     .home-icons {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-       /* margin: 3rem 0.5rem;*/
     }
     
-
-
-
-    main h1 {
-        font-size: 1.4rem;
-        font-weight: bold;
+/** main section **/
+    main {
+        margin: 2rem 0rem;
     }
 
-    input,
-    .userDetails input {
+    .content {
+        margin: 5vh;
+    }
+
+    /* section title */
+    main h1 {
+        font-size: 1.4rem;
+    }
+
+/** forms **/
+    .loginForm input, .userDetails input {
         width: 60vw;
     }
 
+/** footer **/
     .footer-copyright {
         display: flex;
         flex-direction: column;
@@ -456,17 +453,13 @@ margin: 0.5rem auto 3rem;
         font-size: 0.8rem;
     }
 
-    main {
-        margin: 2rem 0rem;
-    }
-
-
-    /* *** table *** */
-
+/** tables **/
+    /* table container for desktop and tablet */
     .table-bigscreen {
         display: none;
     }
-
+    
+    /* table container for mobile */
     .table-mobile {
         display: flex;
         flex-direction: row;
@@ -486,44 +479,16 @@ margin: 0.5rem auto 3rem;
         text-align: left;
     }
 
-    .theading {
-        border: none;
-        display: flex;
-        flex-direction: column;
-        align-self: stretch;
-        width: 36vw;
-        color: #3AB0FF;
-        font-weight: 800;
+    /* details table with data labels */
+    .dataLabels {  
         margin: 0.6rem 0;
+        width: 36vw;
     }
     
-    .tcontent {
-        border: none;
-        display: flex;
-        flex-direction: column;
-        align-self: stretch;
+    /* details table with data content */
+    .dataContent {
         margin: 0.6rem 0;
         width: 36vw;
     }
-
-    /* table 
-
-    table {
-        font-size: 0.8rem;
-        margin: 1rem 0;
-        padding: 0;
-    }
-
-    th {
-        color: #3AB0FF;
-        font-weight: 800;
-        padding: 0.2rem;
-    }
-
-    td {
-        padding: 0.3rem;
-    }
-*/
-
 
 }

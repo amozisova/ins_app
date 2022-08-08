@@ -42,6 +42,4 @@ class Events extends \Core\Controller
       return $userData;
   }
 
-
-#TODO analogicky k insurance doplnit funkce na zobrazení detailů#
 }

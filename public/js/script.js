@@ -17,7 +17,6 @@ toggleBtn.addEventListener('click', toggleNav);
 /*
 *** scrollbars width calculation ***
 */
-
 function getScrollbarWidth(elm) {
   if (elm === document.body) {
     return window.innerWidth - document.documentElement.clientWidth;
