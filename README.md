@@ -4,14 +4,15 @@
   - [Screenshot](#screenshot)
   - [Built with](#built-with)
   - [About development](#about-development)
- 
-## Overview
+  - [Technical information](#technical-information)
+
+  
+### Overview
 Simple insurance app based on the MVC pattern. I created this project to practice PHP, CRUD and coding skills I've been learning.
 Current version contains a login form and a basic user interface from a client perspective - to view insurance details, insurance events and read and update contact details. 
 Admin interface will be added with the next update.
 
-
-#### You can view the website on the following [Site Link](https://insapp.mozisa.eu/).
+#### You can view the demo of the app on the following [website](https://insapp.mozisa.eu/).
 
 
 ### Screenshot
@@ -20,8 +21,8 @@ https://github.com/amozisova/portfolio/blob/main/img/projects/insapp.png
 
 ### Built with
 - PHP, MySQL, HTML5
-- JavaScript
 - CSS3, Twig
+- JavaScript
 
 
 ### About development
@@ -40,3 +41,15 @@ https://github.com/amozisova/portfolio/blob/main/img/projects/insapp.png
 
 #### refactoring
 - In the final stage I checked all the parts for errors, deleted unnecessary lines of code, restructured some parts semantically and refactored code, trying to make it clean and comprehensive.
+
+
+### Technical information
+If you want to try the app, you need to:
+
+- Configure database connection in the /App/Config.php file to use your database credentials.
+  Note: DB_NAME must be kept as 'ins_app'.
+- Import ins_app.sql to your database
+- Login with following details: 
+			e-mail: bet@bet.cz
+			password: jedna
+- Enjoy! I suggest you use XAMPP to host your app locally.
