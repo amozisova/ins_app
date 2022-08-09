@@ -23,13 +23,13 @@ namespace App;
       * Databse user
       * @var string
       */
-      const DB_USER='insapp';
+      const DB_USER='root';
 
       /**
        * Database password
        * @var string
        */
-      const DB_PSWD='INS_app';
+      const DB_PSWD='';
 
       /**
        * Show or hide error messages on screen
