@@ -1,0 +1,10 @@
+[15-Sep-2022 15:56:31 Europe/Berlin] Uncaught exception: 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1932 Table 'ins_app.clients' doesn't exist in engine'
+Stack trace: #0 D:\Dropbox\#programování\#projekt\ins_app\App\Models\User.php(26): PDOStatement->execute()
+#1 D:\Dropbox\#programování\#projekt\ins_app\App\Models\User.php(38): App\Models\User->findByEmail('bet@bet.cz')
+#2 D:\Dropbox\#programování\#projekt\ins_app\App\Controllers\Login.php(35): App\Models\User->checkLogin('bet@bet.cz', 'jedna')
+#3 [internal function]: App\Controllers\Login->loginAction()
+#4 D:\Dropbox\#programování\#projekt\ins_app\Core\Controller.php(41): call_user_func_array(Array, Array)
+#5 D:\Dropbox\#programování\#projekt\ins_app\Core\Router.php(121): Core\Controller->__call('login', Array)
+#6 D:\Dropbox\#programování\#projekt\ins_app\public\index.php(40): Core\Router->dispatch('login/login')
+#7 {main}
+Thrown in 'D:\Dropbox\#programování\#projekt\ins_app\App\Models\User.php' on line 26
